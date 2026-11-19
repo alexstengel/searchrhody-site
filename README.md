@@ -1,6 +1,6 @@
 # SearchRhody
 
-Standalone static site for SearchRhody, a local visibility service from Alex Stengel: the basics first for Rhode Island businesses.
+Standalone static site for SearchRhody, a local visibility service from Alex Stengel in Johnston, Rhode Island.
 
 This folder is a **local draft only**. It is not deployed. The `CNAME` file contains `searchrhody.com` so it is ready if the domain is purchased and the site is published later. Do not push, publish, or buy the domain without Alex's review and approval.
 
@@ -14,9 +14,11 @@ Then open http://127.0.0.1:8854/
 
 ## Notes
 
-- Package names, prices, plan names, and add-on prices are visible placeholders until offer copy is final.
+- Homepage copy follows `docs/searchrhody-homepage-copy-v2.md`.
+- Package names, prices, plan names, and add-on prices are visible placeholders until offer copy is final. "Get found" and "Stay found" are proposed labels only.
+- Brand coral is `#F1784B`. Atlantic is `#142C3E`, ivory `#F7F5EF`, sea glass `#69A9A1`.
 - Screenshots in `screenshots/` are gitignored.
-- The homepage is a static hero plus a four-card services section (Get found, Build trust, Be ready, Handoff kit). There is no scroll animation on the homepage.
+- The homepage is a static hero (phone-on-counter still) plus two service paths with HTML/CSS mockups. There is no scroll animation on the homepage.
 
 ## Archived proofs
 

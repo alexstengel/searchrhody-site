@@ -2,7 +2,7 @@
 """Build SearchRhody logo variants from the approved pin and fonts.
 
 Pin geometry is never altered. Colors:
-  Atlantic #142C3E, Coral #F46934, Ivory #F7F5EF, Sea Glass #69A9A1
+  Atlantic #142C3E, Coral #F1784B, Ivory #F7F5EF, Sea Glass #69A9A1
 Fonts: Fraunces opsz72 wght800 SOFT0 WONK0; Inter opsz14 wght450
 """
 from __future__ import annotations
@@ -20,7 +20,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parent
 ATLANTIC = "#142C3E"
-CORAL = "#F46934"
+CORAL = "#F1784B"
 IVORY = "#F7F5EF"
 SEA = "#69A9A1"
 TAGLINE = "Local visibility, made simple."
@@ -37,7 +37,7 @@ IN = instantiateVariableFont(
 
 PIN_SVG = (ROOT / "searchrhody-pin.svg").read_text()
 CLIP_INNER = re.search(r"<clipPath id=\"sr-wave\">(.*?)</clipPath>", PIN_SVG, re.S).group(1)
-PIN_D = re.search(r'<path fill="#F46934" d="([^"]+)"', PIN_SVG).group(1)
+PIN_D = re.search(r'<path fill="(?:' + CORAL + r'|#F46934|#F1784B)" d="([^"]+)"', PIN_SVG).group(1)
 WAVE_PATHS = re.findall(
     r'<path transform="([^"]+)" fill="([^"]+)" d="([^"]+)"\s*/>', PIN_SVG
 )
@@ -339,7 +339,7 @@ def compose_sheet(assets: dict):
 
     margin = 80
     heading("SearchRhody", margin, 64)
-    draw.text((margin, 140), "Logo variants  ·  approved pin  ·  coral #F46934", font=cap_f, fill="#4A5C68")
+    draw.text((margin, 140), "Logo variants  ·  approved pin  ·  coral #F1784B", font=cap_f, fill="#4A5C68")
 
     # Row 1: stacked + horizontal color
     label("Stacked primary", margin, 210)

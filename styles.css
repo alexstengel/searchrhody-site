@@ -2,7 +2,8 @@
 :root{
   --atlantic:#142C3E;
   --atlantic-deep:#0C1A24;
-  --coral:#F46934;
+  --coral:#F1784B;
+  --coral-hover:#E47247;
   --ivory:#F7F5EF;
   --white:#FFFFFF;
   --sea:#69A9A1;
@@ -58,13 +59,13 @@ a:focus-visible,button:focus-visible,summary:focus-visible{
   color:var(--atlantic);text-decoration:none;font-size:15px;font-weight:600;
   transition:color .2s;
 }
-.nav-links a:hover{color:var(--coral)}
-.nav-links a[aria-current="page"]{color:var(--coral)}
+.nav-links a:hover{color:var(--atlantic);text-decoration:underline;text-underline-offset:3px}
+.nav-links a[aria-current="page"]{color:var(--atlantic);text-decoration:underline;text-underline-offset:3px}
 .nav-cta{
   background:var(--coral);color:var(--atlantic)!important;
   padding:8px 16px;border-radius:999px;font-weight:700!important;
 }
-.nav-cta:hover{background:#e05520;color:var(--atlantic)!important}
+.nav-cta:hover{background:var(--coral-hover);color:var(--atlantic)!important}
 .nav-toggle{
   display:none;background:none;border:0;cursor:pointer;
   width:40px;height:40px;flex-direction:column;justify-content:center;
@@ -106,7 +107,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{
   font-size:clamp(36px,5.2vw,62px);
   line-height:1.08;
   letter-spacing:-.03em;
-  max-width:12em;
+  max-width:11em;
   margin:28px 0 18px;
 }
 .hero h1 em{
@@ -117,7 +118,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{
 .hero-sub{
   color:#D5DFDC;
   font-size:18px;
-  max-width:52ch;
+  max-width:46ch;
   line-height:1.6;
 }
 .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
@@ -131,7 +132,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{
   background:var(--coral);color:var(--atlantic);
   box-shadow:0 8px 22px rgba(12,26,36,.25);
 }
-.btn-solid:hover{background:#e05520}
+.btn-solid:hover{background:var(--coral-hover)}
 .btn-ghost{border:1.5px solid rgba(247,245,239,.45);color:var(--ivory)}
 .btn-ghost:hover{background:var(--ivory);color:var(--atlantic);border-color:var(--ivory)}
 .btn-navy{
@@ -284,7 +285,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{
 .tile.t1{background:#69A9A1}
 .tile.t2{background:#142C3E}
 .tile.t3{background:#D7E6E3}
-.tile.t4{background:#F46934}
+.tile.t4{background:var(--coral)}
 .mock-review{
   padding:8px 0 6px;
   border-top:1px solid var(--line);
@@ -632,6 +633,143 @@ h2{
 .footer a{color:var(--ivory);text-underline-offset:3px}
 .footer a:hover{color:var(--coral)}
 
+
+.hero-reassure{
+  margin-top:18px;
+  font-size:13.5px;
+  font-weight:600;
+  letter-spacing:.02em;
+  color:#C9D4D1;
+}
+
+.middle-close{
+  font-family:var(--display);
+  font-optical-sizing:auto;
+  font-style:italic;
+  font-weight:600;
+  font-size:clamp(26px,3.6vw,38px);
+  letter-spacing:-.03em;
+  color:var(--atlantic);
+  margin-top:28px;
+}
+
+.path-card{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:32px 28px;
+  box-shadow:var(--shadow);
+  display:grid;
+  grid-template-columns:minmax(0,1.2fr) minmax(280px,.9fr);
+  gap:28px 32px;
+  align-items:start;
+}
+.path-card + .path-card{margin-top:22px}
+.section-white .path-card{background:var(--ivory)}
+.path-card h3{
+  font-family:var(--display);
+  font-optical-sizing:auto;
+  font-weight:600;
+  font-size:clamp(24px,3vw,32px);
+  line-height:1.2;
+  letter-spacing:-.02em;
+  color:var(--atlantic);
+  margin-bottom:8px;
+  text-wrap:balance;
+}
+.proposed{
+  font-size:14.5px;
+  color:var(--slate);
+  margin:0 0 14px;
+  line-height:1.55;
+}
+.path-lede{
+  font-size:17px;
+  font-weight:700;
+  color:var(--ink);
+  margin:0 0 12px;
+}
+.path-copy > p{color:var(--slate);font-size:16px;margin-bottom:14px}
+.deliverables{
+  list-style:none;
+  display:grid;
+  gap:12px;
+  margin:0 0 8px;
+}
+.deliverables li{
+  color:var(--slate);
+  font-size:15.5px;
+  padding-left:16px;
+  border-left:3px solid var(--sea);
+}
+.deliverables strong{color:var(--atlantic);font-weight:700}
+.note-time{
+  font-size:15px;
+  color:var(--slate);
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:14px 16px;
+  margin-top:16px;
+}
+.section-white .note-time{background:var(--ivory)}
+.note-time strong{color:var(--atlantic)}
+
+.path-mocks{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.path-mocks .mock,
+.path-visual .mock{
+  min-height:0;
+  height:100%;
+}
+.path-mocks .mock-map{height:72px}
+.path-mocks .mock-name{font-size:14px}
+.path-mocks .mock-hours,.path-mocks .mock-meta,.path-mocks .mock-addr{font-size:11px;white-space:nowrap}
+.path-mocks .mock-btns span{font-size:10px;padding:6px 0}
+.path-mocks .folder{padding-bottom:10px}
+
+.mock-report{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:16px 16px 18px;
+  height:100%;
+}
+.report-kicker{
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:#245C56;
+  margin-bottom:4px!important;
+}
+.report-title{
+  font-family:var(--display);
+  font-weight:600;
+  font-size:22px;
+  color:var(--atlantic);
+  margin-bottom:14px!important;
+}
+
+.addon-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.2fr) minmax(240px,.7fr);
+  gap:32px 40px;
+  align-items:center;
+}
+.addon-chat{min-height:180px;justify-content:center}
+.contact-close{
+  font-family:var(--display);
+  font-style:italic;
+  font-weight:600;
+  font-size:clamp(22px,3vw,30px);
+  margin-top:32px;
+  color:var(--ivory);
+}
+
 /* INNER PAGES */
 .page-hero{padding:64px 0 24px;background:var(--atlantic-deep);color:var(--ivory)}
 .page-hero h1{
@@ -671,6 +809,8 @@ h2{
   .hero-grid{grid-template-columns:1fr;gap:36px}
   .hero-visual{order:1}
   .hero-copy{order:0}
+  .path-card,.addon-grid{grid-template-columns:1fr}
+  .path-mocks{grid-template-columns:1fr 1fr}
   .phone{width:min(240px,80%)}
   .hero-still{aspect-ratio:4/3;object-position:50% 38%;max-height:420px}
   .service-grid{grid-template-columns:1fr}
@@ -698,8 +838,8 @@ h2{
   .hero-actions{margin-top:20px}
   .hero-wave{height:40px;margin-top:24px}
   .eyebrow{
-    border:0;padding:0;letter-spacing:.1em;line-height:1.45;
-    white-space:normal;max-width:28em;
+    border:0;padding:0;letter-spacing:.08em;line-height:1.45;
+    white-space:normal;max-width:none;
   }
   .section{padding:68px 0}
   .contact-card{width:100%}
