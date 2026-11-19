@@ -14,6 +14,8 @@
         [750.17, 540.56],
         [536.35, 542.23],
       ],
+      // Phone body (bezel + chin) in source pixels [x0,y0,x1,y1]
+      body: [528, 212, 785, 588],
     },
     mobile: {
       src: [720, 1280],
@@ -23,6 +25,7 @@
         [487.55, 787.34],
         [249.63, 787.23],
       ],
+      body: [245, 418, 530, 838],
     },
   };
 
@@ -57,6 +60,16 @@
   let motionOn = true;
   let ticking = false;
   let lastP = 0;
+  const cam = {
+    targetScale: 1,
+    phoneX: 0,
+    phoneY: 0,
+    artW: 0,
+    artH: 0,
+    wrapW: 0,
+    wrapH: 0,
+    scale: 1,
+  };
 
   function mediaMobile() {
     return window.matchMedia("(max-width: 768px), (orientation: portrait)").matches;
@@ -192,7 +205,24 @@
     screenLayer.style.height = SCREEN.h + "px";
     screenLayer.style.transform = matrix3dForQuad(SCREEN.w, SCREEN.h, dest);
 
+    const [bx0, by0, bx1, by1] = QUADS[mode].body;
+    const phoneW = ((bx1 - bx0) / srcW) * w;
+    const phoneH = ((by1 - by0) / srcH) * h;
+    const FILL = 0.92;
+    const MAX_FILL = 0.96;
+    let target = Math.min((FILL * sw) / phoneW, (FILL * sh) / phoneH);
+    target = Math.max(1, target);
+    target = Math.min(target, (MAX_FILL * sw) / phoneW, (MAX_FILL * sh) / phoneH);
+    cam.targetScale = target;
+    cam.phoneX = (((bx0 + bx1) / 2) / srcW) * w;
+    cam.phoneY = (((by0 + by1) / 2) / srcH) * h;
+    cam.artW = w;
+    cam.artH = h;
+    cam.wrapW = sw;
+    cam.wrapH = sh;
+
     setStillSource();
+    apply(motionOn ? lastP : 1);
   }
 
   function setStillSource() {
@@ -204,25 +234,47 @@
 
     const webpSrc = $("#still-webp");
     const jpgSrc = $("#still-jpg");
-    const changed = webpSrc.srcset !== webp;
+    const changed = webpSrc.getAttribute("srcset") !== webp;
     if (changed) {
-      art.classList.remove("is-loaded");
-      webpSrc.srcset = webp;
-      jpgSrc.srcset = jpg;
-      still.src = jpg;
+      webpSrc.setAttribute("srcset", webp);
+      jpgSrc.setAttribute("srcset", jpg);
+      if (still.getAttribute("src") !== jpg) still.src = jpg;
       still.alt = "";
-      if (still.complete && still.naturalWidth) {
-        art.classList.add("is-loaded");
-      }
+    }
+    if (still.complete && still.naturalWidth) {
+      art.classList.add("is-loaded");
     }
   }
 
   still.addEventListener("load", () => art.classList.add("is-loaded"));
   still.addEventListener("error", () => art.classList.add("is-loaded"));
 
+  function applyCamera(p) {
+    if (!cam.artW || !cam.wrapW) return;
+    // Push in from the opening toward the map chapter; hold through the pin
+    // drop, then ease back slightly at the end. Reduced-motion uses p=1.
+    const tIn = smooth(range(p, 0.06, 0.60));
+    const tBack = smooth(range(p, 0.86, 1));
+    const amt = tIn * (1 - 0.07 * tBack);
+    const s = 1 + (cam.targetScale - 1) * amt;
+    const artLeft = (cam.wrapW - cam.artW) / 2;
+    const artTop = (cam.wrapH - cam.artH) / 2;
+    const naturalX = artLeft + cam.phoneX;
+    const naturalY = artTop + cam.phoneY;
+    const wantX = cam.wrapW * 0.5;
+    const wantY = cam.wrapH * 0.5;
+    const targetX = naturalX + (wantX - naturalX) * amt;
+    const targetY = naturalY + (wantY - naturalY) * amt;
+    const tx = targetX - artLeft - cam.phoneX * s;
+    const ty = targetY - artTop - cam.phoneY * s;
+    cam.scale = s;
+    art.style.transform = `translate(${tx.toFixed(2)}px, ${ty.toFixed(2)}px) scale(${s})`;
+  }
+
   function apply(p) {
     lastP = p;
     document.documentElement.style.setProperty("--p", String(p));
+    applyCamera(p);
 
     const tSearch = range(p, CH[1].start, CH[1].end);
     const tMap = range(p, CH[2].start, CH[2].end);
@@ -257,27 +309,26 @@
       pin.style.transform = `translate(-50%, calc(-100% + ${y}px)) scale(${s})`;
     }
 
-    // 3. Profile unfolds up, then pops slightly toward the camera.
-    const unfold = easeOutCubic(clamp(tProf / 0.62, 0, 1));
-    const pop = easeOutCubic(clamp((tProf - 0.55) / 0.45, 0, 1));
+    // 3. Profile unfolds up inside the screen, then a subtle lift (max ~5%).
+    const unfold = easeOutCubic(clamp(tProf / 0.70, 0, 1));
+    const lift = easeOutCubic(clamp((tProf - 0.55) / 0.45, 0, 1));
     if (tProf <= 0) {
       card.style.opacity = "0";
-      card.style.transform = "translateY(18%) scale(0.86)";
+      card.style.transform = "translateY(22%) scale(0.96)";
+      card.style.boxShadow = "0 6px 16px rgba(12,26,36,0.14)";
     } else {
-      const y = (1 - unfold) * 28; // percent of its height, moving up
-      const sc = 0.9 + 0.1 * unfold + 0.36 * pop;
-      const lift = -22 * pop;
-      card.style.opacity = String(Math.min(1, unfold / 0.25));
-      card.style.transform = `translateY(calc(${(1 - unfold) * 40}% + ${lift}px)) scale(${sc})`;
-      card.style.boxShadow = `0 ${10 + 22 * pop}px ${24 + 28 * pop}px rgba(12,26,36,${0.18 + 0.16 * pop})`;
+      const sc = 0.97 + 0.03 * unfold + 0.05 * lift; // 1.00 at rest, 1.05 at lift
+      const y = (1 - unfold) * 28; // percent of its height, sliding up
+      card.style.opacity = String(Math.min(1, unfold / 0.22));
+      card.style.transform = `translateY(${y}%) scale(${sc})`;
+      card.style.boxShadow = `0 ${6 + 4 * lift}px ${14 + 6 * lift}px rgba(12,26,36,${0.12 + 0.08 * lift})`;
     }
 
-    // Active chapter + caption. Hide caption while the card is in the foreground.
+    // Active chapter + caption. Card stays on the phone, so the caption can stay.
     let ch = CH[0];
     for (const c of CH) if (p >= c.start) ch = c;
-    const hideCap = pop > 0.28;
-    captionEl.textContent = hideCap ? "" : ch.caption;
-    captionEl.classList.toggle("is-hidden", hideCap || !ch.caption);
+    captionEl.textContent = ch.caption;
+    captionEl.classList.toggle("is-hidden", !ch.caption);
     dots.forEach((d, i) => {
       const on = CH[i] && ch.id === CH[i].id;
       d.setAttribute("aria-current", on ? "true" : "false");
@@ -396,6 +447,7 @@
     seek: (p) => scrollToProgress(clamp(Number(p), 0, 1)),
     layout: layoutArt,
     mode: () => mode,
+    camera: () => ({ ...cam }),
   };
 
   // Nav toggle (same behaviour as the main draft).
