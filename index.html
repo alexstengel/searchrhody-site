@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="proof-root home">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,16 +21,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600;1,9..144,700&amp;family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&amp;display=swap" rel="stylesheet" />
-  <link rel="preload" as="image" href="assets/proof/phone-desktop.webp" type="image/webp" media="(min-width: 769px) and (orientation: landscape)" />
-  <link rel="preload" as="image" href="assets/proof/phone-mobile.webp" type="image/webp" media="(max-width: 768px), (orientation: portrait)" />
+  <link rel="preload" as="image" href="assets/proof/phone-desktop.webp" type="image/webp" media="(min-width: 761px)" />
+  <link rel="preload" as="image" href="assets/proof/phone-mobile.webp" type="image/webp" media="(max-width: 760px)" />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="proof.css" />
-  <link rel="stylesheet" href="proof-ba.css" />
-  <script>
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      document.documentElement.classList.add("prefers-static");
-    }
-  </script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -54,8 +47,8 @@
   }
   </script>
 </head>
-<body class="has-ba-hero">
-  <a class="skip" href="#stage-copy">Skip to content</a>
+<body>
+  <a class="skip" href="#hero-title">Skip to content</a>
 
   <header class="nav" id="top">
     <div class="wrap nav-inner">
@@ -64,6 +57,7 @@
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu"><span></span><span></span><span></span></button>
       <nav id="nav-links" class="nav-links">
+        <a href="#services">Services</a>
         <a href="#package">The package</a>
         <a href="#how-it-works">How it works</a>
         <a href="#who">Who it's for</a>
@@ -75,275 +69,147 @@
   </header>
 
   <main id="main">
-    <div id="proof-scroll" class="proof-scroll">
-    <section class="stage" id="stage" aria-label="Before and after preview of SearchRhody">
-      <div class="stage-copy" id="stage-copy">
-        <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Rhode Island · Service businesses</p>
-        <h1 id="hero-title">Agencies are built for growth.<br /><em>You need the basics first.</em></h1>
-        <p class="hero-sub">Big marketing agencies can be expensive and slow to start, and many want a long contract before anything happens. SearchRhody is the simple, affordable first step. We set up your essentials quickly, with changes you can see right away, so locals can find you, trust you, and reach you. When you're ready for more, you'll have a solid foundation and a handoff kit for whoever comes next.</p>
-        <div class="hero-actions">
-          <a href="index.html#how-it-works" class="btn btn-solid">See How It Works</a>
-          <a href="mailto:astengel51@gmail.com?subject=SearchRhody%20inquiry" class="btn btn-ghost">Get in Touch</a>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Rhode Island · Service businesses</p>
+          <h1 id="hero-title">Agencies are built for growth.<br /><em>You need the basics first.</em></h1>
+          <p class="hero-sub">Big marketing agencies can be expensive and slow to start, and many want a long contract before anything happens. SearchRhody is the simple, affordable first step. We set up your essentials quickly, with changes you can see right away, so locals can find you, trust you, and reach you. When you're ready for more, you'll have a solid foundation and a handoff kit for whoever comes next.</p>
+          <div class="hero-actions">
+            <a href="#how-it-works" class="btn btn-solid">See How It Works</a>
+            <a href="mailto:astengel51@gmail.com?subject=SearchRhody%20inquiry" class="btn btn-ghost">Get in Touch</a>
+          </div>
         </div>
-      </div>
-
-      <div class="stage-art-wrap" id="stage-art-wrap">
-        <div class="stage-art" id="stage-art">
-          <img id="poster" class="poster" alt="" width="48" height="27" src="assets/proof/phone-desktop-poster.webp" />
+        <div class="hero-visual">
           <picture>
-            <source id="still-webp" type="image/webp" srcset="assets/proof/phone-desktop.webp" />
-            <source id="still-jpg" type="image/jpeg" srcset="assets/proof/phone-desktop.jpg" />
-            <img id="still" class="still" alt="" width="1280" height="720" src="assets/proof/phone-desktop.jpg" />
+            <source media="(min-width: 761px)" type="image/webp" srcset="assets/proof/phone-desktop.webp" />
+            <source media="(min-width: 761px)" type="image/jpeg" srcset="assets/proof/phone-desktop.jpg" />
+            <source type="image/webp" srcset="assets/proof/phone-mobile.webp" />
+            <img
+              class="hero-still"
+              src="assets/proof/phone-mobile.jpg"
+              width="720"
+              height="1280"
+              alt="A phone on a wooden shop counter, next to a mug, keys, and work gloves."
+            />
           </picture>
-
-          <div class="screen-layer" id="screen-layer" aria-hidden="true">
-            <div class="screen-clip">
-              <div class="listing listing-before" id="listing-before">
-                <div class="status">
-                  <span>8:14</span>
-                  <span class="status-sigs" aria-hidden="true">
-                    <i></i><i></i><i></i><i class="off"></i>
-                    <span class="batt"><b></b></span>
-                  </span>
-                </div>
-                <div class="listing-body">
-                  <div class="tag-spacer" aria-hidden="true"></div>
-                  <p class="claim-pill is-missing">Listing not claimed</p>
-                  <p class="biz-name">Your business</p>
-                  <p class="biz-meta is-missing">Category not set</p>
-                  <p class="hours-row is-missing">Hours not listed</p>
-                  <div class="photo-empty">
-                    <svg viewBox="0 0 64 48" aria-hidden="true"><rect x="6" y="8" width="52" height="32" rx="4" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="4 3"/><path d="M18 30l8-8 6 6 6-10 10 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    <span>No photos</span>
-                  </div>
-                  <div class="mid-block">
-                    <p class="sec-label">Details</p>
-                    <p class="info-row is-missing">Address incomplete</p>
-                  </div>
-                  <div class="reviews-block">
-                    <p class="sec-label">Reviews</p>
-                    <p class="info-row is-missing">None yet</p>
-                    <div class="gray-line"></div>
-                    <div class="gray-line short"></div>
-                    <div class="gray-line"></div>
-                    <div class="gray-line shorter"></div>
-                  </div>
-                </div>
-                <div class="notice missed">Missed call · 8:14 PM</div>
-              </div>
-
-              <div class="listing listing-after" id="listing-after">
-                <div class="status">
-                  <span>8:16</span>
-                  <span class="status-sigs" aria-hidden="true">
-                    <i></i><i></i><i></i><i class="off"></i>
-                    <span class="batt"><b></b></span>
-                  </span>
-                </div>
-                <div class="listing-body">
-                  <div class="tag-spacer" aria-hidden="true"></div>
-                  <p class="claim-pill is-ready">Profile claimed</p>
-                  <p class="biz-name">Your business</p>
-                  <p class="biz-meta">Plumber · Johnston, RI</p>
-                  <p class="hours-row hours-open">Open now · 7:30 AM–6:00 PM</p>
-                  <div class="photo-tiles">
-                    <svg class="tile" viewBox="0 0 120 90" aria-hidden="true">
-                      <rect width="120" height="90" fill="#D7E6E3"/>
-                      <rect x="14" y="38" width="92" height="40" fill="#142C3E"/>
-                      <rect x="14" y="22" width="56" height="18" fill="#69A9A1"/>
-                      <rect x="78" y="28" width="16" height="12" fill="#F7F5EF"/>
-                    </svg>
-                    <svg class="tile" viewBox="0 0 120 90" aria-hidden="true">
-                      <rect width="120" height="90" fill="#E4E0D8"/>
-                      <rect x="22" y="40" width="76" height="28" rx="4" fill="#4A5C68"/>
-                      <rect x="30" y="30" width="44" height="18" fill="#142C3E"/>
-                      <circle cx="84" cy="58" r="8" fill="#F46934"/>
-                      <circle cx="36" cy="58" r="8" fill="#F46934"/>
-                    </svg>
-                    <svg class="tile" viewBox="0 0 120 90" aria-hidden="true">
-                      <rect width="120" height="90" fill="#CFE0DC"/>
-                      <rect x="36" y="18" width="48" height="54" rx="3" fill="#F7F5EF"/>
-                      <rect x="44" y="26" width="32" height="20" fill="#69A9A1"/>
-                      <rect x="48" y="52" width="24" height="6" fill="#142C3E"/>
-                    </svg>
-                  </div>
-                  <div class="mid-block">
-                    <p class="sec-label">Services</p>
-                    <p class="services">Drain clearing · Water heaters · Emergency visits</p>
-                  </div>
-                  <div class="reviews-block">
-                    <p class="sec-label">Reviews</p>
-                    <div class="review-line">
-                      <div class="gray-line"></div>
-                      <div class="gray-line short"></div>
-                      <p class="owner-reply">Owner reply · Thanks — we can follow up this week.</p>
-                    </div>
-                    <div class="review-line">
-                      <div class="gray-line"></div>
-                      <div class="gray-line shorter"></div>
-                      <p class="owner-reply">Owner reply · Glad we could help.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="notice inquiry">
-                  <span>New inquiry — replied in 2 min</span>
-                  <small>Illustrative</small>
-                </div>
-              </div>
-
-              <div class="listing-copy" id="listing-copy">
-                <div class="status">
-                  <span id="copy-time">8:14</span>
-                  <span class="status-sigs" aria-hidden="true">
-                    <i></i><i></i><i></i><i class="off"></i>
-                    <span class="batt"><b></b></span>
-                  </span>
-                </div>
-                <div class="listing-body">
-                  <div class="tag-spacer" aria-hidden="true"></div>
-                  <div class="swap" data-swap="pill" data-at="0.22">
-                    <p class="claim-pill is-missing swap-a">Listing not claimed</p>
-                    <p class="claim-pill is-ready swap-b">Profile claimed</p>
-                  </div>
-                  <p class="biz-name">Your business</p>
-                  <div class="swap" data-swap="meta" data-at="0.30">
-                    <p class="biz-meta is-missing swap-a">Category not set</p>
-                    <p class="biz-meta swap-b">Plumber · Johnston, RI</p>
-                  </div>
-                  <div class="swap" data-swap="hours" data-at="0.38">
-                    <p class="hours-row is-missing swap-a">Hours not listed</p>
-                    <p class="hours-row hours-open swap-b">Open now · 7:30 AM–6:00 PM</p>
-                  </div>
-                  <div class="photo-spacer" aria-hidden="true"></div>
-                  <div class="swap mid-block" data-swap="mid" data-at="0.50">
-                    <div class="swap-a">
-                      <p class="sec-label">Details</p>
-                      <p class="info-row is-missing">Address incomplete</p>
-                    </div>
-                    <div class="swap-b">
-                      <p class="sec-label">Services</p>
-                      <p class="services">Drain clearing · Water heaters · Emergency visits</p>
-                    </div>
-                  </div>
-                  <div class="swap reviews-block" data-swap="reviews" data-at="0.62">
-                    <div class="swap-a">
-                      <p class="sec-label">Reviews</p>
-                      <p class="info-row is-missing">None yet</p>
-                      <div class="gray-line"></div>
-                      <div class="gray-line short"></div>
-                      <div class="gray-line"></div>
-                      <div class="gray-line shorter"></div>
-                    </div>
-                    <div class="swap-b">
-                      <p class="sec-label">Reviews</p>
-                      <div class="review-line">
-                        <div class="gray-line"></div>
-                        <div class="gray-line short"></div>
-                        <p class="owner-reply">Owner reply · Thanks — we can follow up this week.</p>
-                      </div>
-                      <div class="review-line">
-                        <div class="gray-line"></div>
-                        <div class="gray-line shorter"></div>
-                        <p class="owner-reply">Owner reply · Glad we could help.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="swap notice-swap" data-swap="notice" data-at="0.74">
-                  <div class="notice missed swap-a">Missed call · 8:14 PM</div>
-                  <div class="notice inquiry swap-b">
-                    <span>New inquiry — replied in 2 min</span>
-                    <small>Illustrative</small>
-                  </div>
-                </div>
-              </div>
-              <div class="wipe-line" id="wipe-line" aria-hidden="true">
-                <span class="wipe-knob"></span>
-              </div>
-              <div class="ba-tags" aria-hidden="true">
-                <span class="ba-tag tag-before">Before</span>
-                <span class="ba-tag tag-after">After</span>
-              </div>
-              <div class="screen-glare"></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="ba-labels" id="ba-labels">
-          <p class="ba-label" id="label-findable">From invisible to findable</p>
-          <p class="ba-label" id="label-basics">Get the basics set up</p>
-          <p class="ba-label" id="label-ready">Ready to grow</p>
         </div>
       </div>
+      <svg class="hero-wave" viewBox="0 0 1440 72" preserveAspectRatio="none" aria-hidden="true">
+        <path fill="currentColor" d="M0,40 C240,72 480,8 720,32 C960,56 1200,8 1440,36 L1440,72 L0,72 Z"></path>
+      </svg>
+    </section>
 
-      <div class="stage-bar">
-        <p class="caption" id="caption" aria-live="polite"></p>
-        <div class="controls">
-          <div class="dots" role="tablist" aria-label="Chapters">
-            <button class="dot" type="button" data-chapter="0" aria-label="A business with no presence yet." aria-current="true"></button>
-            <button class="dot" type="button" data-chapter="1" aria-label="From invisible to findable."></button>
-            <button class="dot" type="button" data-chapter="2" aria-label="Get the basics set up."></button>
-            <button class="dot" type="button" data-chapter="3" aria-label="Ready to grow."></button>
-          </div>
-          <button class="ctrl" id="ctrl-skip" type="button">Skip animation</button>
-          <button class="ctrl" id="ctrl-replay" type="button">Replay</button>
-          <button class="ctrl" id="ctrl-motion" type="button" aria-pressed="true">Motion on</button>
+    <section id="services" class="section section-ivory" aria-labelledby="services-title">
+      <div class="wrap">
+        <p class="kicker">The starting setup</p>
+        <h2 id="services-title">What you get</h2>
+        <p class="section-lede">Four essentials, with no long contract. Not ads, not a campaign — just the basics put in place, with changes you can see right away, and a clean handoff kit for whoever comes next.</p>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="mock" aria-hidden="true">
+              <div class="mock-found">
+                <div class="mock-map">
+                  <span class="mock-road h a"></span>
+                  <span class="mock-road h b"></span>
+                  <span class="mock-road v c"></span>
+                  <span class="mock-road v d"></span>
+                  <span class="mock-block b1"></span>
+                  <span class="mock-block b2"></span>
+                  <img class="mock-pin" src="brand/searchrhody-pin-color.svg" alt="" width="34" height="44" />
+                </div>
+                <div class="mock-found-body">
+                  <p class="mock-name">Your business</p>
+                  <p class="mock-meta">Plumber · Johnston, RI</p>
+                  <p class="mock-hours"><span class="mock-open">Open now</span> · 7:30 AM–6:00 PM</p>
+                  <p class="mock-addr">Johnston, Rhode Island</p>
+                  <div class="mock-btns">
+                    <span>Call</span>
+                    <span>Directions</span>
+                    <span>Website</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h3>Get found</h3>
+            <p>Your Google Business Profile set up right: claimed, with accurate hours, the right categories, and a map listing so locals can find you. I'm not a partner of Google — I just set up the public profile that already exists.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="mock" aria-hidden="true">
+              <div class="mock-trust">
+                <div class="mock-photos">
+                  <span class="tile t1"><svg viewBox="0 0 48 48" focusable="false"><circle cx="16" cy="15" r="4.5" fill="currentColor"/><path d="M6 36l11-13 7 8 6-10 12 15v4H6z" fill="currentColor"/></svg></span>
+                  <span class="tile t2"><svg viewBox="0 0 48 48" focusable="false"><circle cx="16" cy="15" r="4.5" fill="currentColor"/><path d="M6 36l11-13 7 8 6-10 12 15v4H6z" fill="currentColor"/></svg></span>
+                  <span class="tile t3"><svg viewBox="0 0 48 48" focusable="false"><circle cx="16" cy="15" r="4.5" fill="currentColor"/><path d="M6 36l11-13 7 8 6-10 12 15v4H6z" fill="currentColor"/></svg></span>
+                  <span class="tile t4"><svg viewBox="0 0 48 48" focusable="false"><circle cx="16" cy="15" r="4.5" fill="currentColor"/><path d="M6 36l11-13 7 8 6-10 12 15v4H6z" fill="currentColor"/></svg></span>
+                </div>
+                <div class="mock-review">
+                  <span class="line w90"></span>
+                  <span class="line w70"></span>
+                  <p class="reply-label">Owner reply</p>
+                  <span class="line w80"></span>
+                </div>
+                <div class="mock-review">
+                  <span class="line w85"></span>
+                  <span class="line w55"></span>
+                  <p class="reply-label">Owner reply</p>
+                  <span class="line w65"></span>
+                </div>
+              </div>
+            </div>
+            <h3>Build trust</h3>
+            <p>Photos on the profile, a reply to each review, and the same name, hours, and details everywhere they appear.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="mock" aria-hidden="true">
+              <div class="mock-ready">
+                <div class="mock-form">
+                  <p class="mock-form-title">New inquiry</p>
+                  <span class="field short"></span>
+                  <span class="field tall"></span>
+                  <span class="send">Send</span>
+                </div>
+                <div class="mock-chat">
+                  <div class="bubble in">
+                    <span class="when">8:14 PM</span>
+                    <span class="line w90"></span>
+                    <span class="line w60"></span>
+                  </div>
+                  <div class="bubble out">
+                    <span class="addon-tag">Add-on</span>
+                    <span class="when">Auto-reply</span>
+                    <span class="line light w85"></span>
+                    <span class="line light w50"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h3>Be ready</h3>
+            <p>A simple inquiry form so after-hours messages don't sit unseen. An automatic first reply is available as an <strong>add-on</strong> if you want it — it is not part of the core setup.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="mock" aria-hidden="true">
+              <div class="mock-kit">
+                <div class="folder">
+                  <span class="folder-tab">Handoff kit</span>
+                  <ul class="checklist">
+                    <li><span class="check"></span>Logins</li>
+                    <li><span class="check"></span>Photos</li>
+                    <li><span class="check"></span>Profile details</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <h3>Handoff kit</h3>
+            <p>Your logins, photos, and profile details gathered in one place, ready to hand to any agency later or keep using on your own.</p>
+          </article>
         </div>
       </div>
     </section>
-    <div class="scroll-spacer" id="scroll-spacer" aria-hidden="true"></div>
-  </div>
-
-  <section class="get-strip" id="what-you-get">
-    <div class="wrap">
-      <h2>What you get</h2>
-      <p class="get-lead">The starting setup, with no long contract. Not ads, not a campaign — just the essentials, with changes you can see right away, and a clean handoff kit for whoever comes next.</p>
-      <div class="get-grid">
-        <article class="get-card">
-          <div class="get-ill" aria-hidden="true">
-            <svg viewBox="0 0 160 110" width="160" height="110">
-              <rect x="8" y="18" width="144" height="80" rx="8" fill="#D7E6E3"/>
-              <path d="M20 86 V34 M52 86 V28 M84 86 V46 M116 86 V36" stroke="#8AA8A2" stroke-width="3" fill="none"/>
-              <path d="M20 50 H140 M20 66 H140" stroke="#8AA8A2" stroke-width="2" fill="none"/>
-              <path d="M78 22c0 20-22 34-22 48a22 22 0 0 0 44 0c0-14-22-28-22-48z" fill="#F46934"/>
-              <circle cx="78" cy="64" r="9" fill="#F7F5EF"/>
-            </svg>
-          </div>
-          <h3>Get found</h3>
-          <p>Profile set up right: name, hours, and location consistent, so locals can find you.</p>
-        </article>
-        <article class="get-card">
-          <div class="get-ill" aria-hidden="true">
-            <svg viewBox="0 0 160 110" width="160" height="110">
-              <rect x="18" y="16" width="124" height="82" rx="10" fill="#FFFFFF" stroke="#E4E0D8" stroke-width="2"/>
-              <rect x="28" y="26" width="36" height="28" rx="3" fill="#69A9A1"/>
-              <rect x="68" y="26" width="36" height="28" rx="3" fill="#142C3E"/>
-              <rect x="108" y="26" width="24" height="28" rx="3" fill="#D7E6E3"/>
-              <rect x="28" y="62" width="88" height="6" rx="3" fill="#E4E0D8"/>
-              <rect x="28" y="72" width="60" height="6" rx="3" fill="#E4E0D8"/>
-              <rect x="28" y="84" width="70" height="6" rx="3" fill="#F46934"/>
-            </svg>
-          </div>
-          <h3>Build trust</h3>
-          <p>Photos up, hours accurate, and reviews get a reply.</p>
-        </article>
-        <article class="get-card">
-          <div class="get-ill" aria-hidden="true">
-            <svg viewBox="0 0 160 110" width="160" height="110">
-              <rect x="22" y="22" width="70" height="68" rx="8" fill="#FFFFFF" stroke="#E4E0D8" stroke-width="2"/>
-              <rect x="32" y="34" width="50" height="6" rx="3" fill="#142C3E"/>
-              <rect x="32" y="46" width="40" height="5" rx="2" fill="#E4E0D8"/>
-              <rect x="32" y="56" width="46" height="5" rx="2" fill="#E4E0D8"/>
-              <path d="M96 40h30l12 14v36a8 8 0 0 1-8 8H96a8 8 0 0 1-8-8V48a8 8 0 0 1 8-8z" fill="#F46934"/>
-              <path d="M108 68l8 8 16-18" fill="none" stroke="#F7F5EF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <h3>Be ready</h3>
-          <p>Simple lead capture, plus a clean handoff kit if you later work with an agency or keep going on your own.</p>
-        </article>
-      </div>
-    </div>
-  </section>
 
     <section id="problem" class="section section-ivory" aria-labelledby="problem-title">
       <div class="wrap">
@@ -559,6 +425,5 @@
   </footer>
 
   <script src="script.js"></script>
-  <script src="proof-ba.js"></script>
 </body>
 </html>

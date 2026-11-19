@@ -1,6 +1,6 @@
 # SearchRhody
 
-Standalone static site for SearchRhody, a local visibility service from Alex Stengel: Google Maps, reviews, and AI search for Rhode Island businesses.
+Standalone static site for SearchRhody, a local visibility service from Alex Stengel: the basics first for Rhode Island businesses.
 
 This folder is a **local draft only**. It is not deployed. The `CNAME` file contains `searchrhody.com` so it is ready if the domain is purchased and the site is published later. Do not push, publish, or buy the domain without Alex's review and approval.
 
@@ -16,11 +16,8 @@ Then open http://127.0.0.1:8854/
 
 - Package names, prices, plan names, and add-on prices are visible placeholders until offer copy is final.
 - Screenshots in `screenshots/` are gitignored.
+- The homepage is a static hero plus a four-card services section (Get found, Build trust, Be ready, Handoff kit). There is no scroll animation on the homepage.
 
-## Scroll proof
+## Archived proofs
 
-The homepage hero on `index.html` is the before-and-after (unclaimed basics to a starter setup). Do not publish it without Alex's review.
-
-`proof-before-after.html` is the standalone local proof of that same hero.
-
-`proof.html` is an archived alternate (the earlier search-story proof). It is not linked from the homepage.
+`proof.html` (search-story) and `proof-before-after.html` (before-and-after) are local archived proofs. They are not linked from the homepage.
