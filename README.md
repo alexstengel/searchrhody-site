@@ -1,6 +1,6 @@
 # SearchRhody
 
-Standalone static site for SearchRhody, a side business from Alex Stengel: Google Maps, reviews, and AI search for Rhode Island businesses.
+Standalone static site for SearchRhody, a local visibility service from Alex Stengel: Google Maps, reviews, and AI search for Rhode Island businesses.
 
 This folder is a **local draft only**. It is not deployed. The `CNAME` file contains `searchrhody.com` so it is ready if the domain is purchased and the site is published later. Do not push, publish, or buy the domain without Alex's review and approval.
 

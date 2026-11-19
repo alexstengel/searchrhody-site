@@ -2,3 +2,4 @@ screenshots/
 brand/ref/*.png
 !brand/ref/brand-board.png
 brand/fonts/
+brand/__pycache__/
