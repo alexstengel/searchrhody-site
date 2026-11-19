@@ -22,7 +22,7 @@ if (year) year.textContent = new Date().getFullYear();
 
 // Scroll reveal. Content stays visible if JS or the observer is unavailable.
 const targets = document.querySelectorAll(
-  '.section h2, .prose, .card, .step-card, .who-card, .about-card, .faq-item, .contact-card'
+  '.section h2, .prose, .card, .step-card, .who-card, .about-card, .faq-item, .contact-card, .get-card'
 );
 const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if ('IntersectionObserver' in window && !reduce) {

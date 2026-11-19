@@ -235,11 +235,12 @@
 
   function applyCamera(p) {
     if (!cam.artW || !cam.wrapW) return;
-    // Arrive at a readable phone a little earlier so the listing can be read
-    // during the wipe. Slight ease-back at the end. Reduced-motion uses p=1.
-    const tIn = smooth(range(p, 0.0, 0.28));
+    // Start already partly zoomed so the opening listing is legible, finish
+    // the push-in before the wipe, then ease back slightly. Reduced-motion uses p=1.
+    const START = mediaMobile() ? 0.62 : 0.42;
+    const tIn = smooth(range(p, 0.0, 0.16));
     const tBack = smooth(range(p, 0.88, 1));
-    const amt = tIn * (1 - 0.06 * tBack);
+    const amt = (START + (1 - START) * tIn) * (1 - 0.06 * tBack);
     const s = 1 + (cam.targetScale - 1) * amt;
     const artLeft = (cam.wrapW - cam.artW) / 2;
     const artTop = (cam.wrapH - cam.artH) / 2;
@@ -291,14 +292,41 @@
     document.documentElement.style.setProperty("--p", String(p));
     applyCamera(p);
 
-    // Left-to-right wipe across the phone screen.
+    // Left-to-right wipe across the photos. Text rows crossfade as wholes
+    // so mid-wipe strings never splice together.
     const wipe = smooth(range(p, 0.10, 0.78));
     const pct = (wipe * 100).toFixed(2);
-    listingAfter.style.clipPath = `inset(0 ${100 - wipe * 100}% 0 0)`;
+    const gap = 1.2; // percent, hidden under the wipe line
+    listingAfter.style.clipPath = `inset(0 ${Math.max(0, 100 - wipe * 100 + gap)}% 0 0)`;
+    const listingBefore = $("#listing-before");
+    if (listingBefore) {
+      listingBefore.style.clipPath = `inset(0 0 0 ${Math.max(0, wipe * 100 + gap)}%)`;
+    }
     wipeLine.style.left = `${pct}%`;
-    wipeLine.style.opacity = wipe > 0.02 && wipe < 0.98 ? "1" : wipe > 0 && wipe < 1 ? String(wipe < 0.5 ? wipe / 0.02 : (1 - wipe) / 0.02) : "0";
-    if (tagBefore) tagBefore.style.opacity = wipe < 0.92 ? "1" : String(clamp((1 - wipe) / 0.08, 0, 1));
-    if (tagAfter) tagAfter.style.opacity = wipe > 0.08 ? String(clamp((wipe - 0.08) / 0.12, 0, 1)) : "0";
+    const lineOn = wipe > 0.02 && wipe < 0.98;
+    wipeLine.style.opacity = lineOn ? "1" : wipe > 0 && wipe < 1 ? String(wipe < 0.5 ? wipe / 0.02 : (1 - wipe) / 0.02) : "0";
+    // Tags only during the wipe — gone at the opening and the end frame.
+    if (tagBefore) {
+      const fadeIn = clamp((wipe - 0.04) / 0.08, 0, 1);
+      const fadeOut = clamp((0.42 - wipe) / 0.12, 0, 1);
+      tagBefore.style.opacity = String(Math.min(fadeIn, fadeOut));
+    }
+    if (tagAfter) {
+      const fadeIn = clamp((wipe - 0.18) / 0.12, 0, 1);
+      const fadeOut = clamp((0.86 - wipe) / 0.10, 0, 1);
+      tagAfter.style.opacity = String(Math.min(fadeIn, fadeOut));
+    }
+    $$("[data-swap]").forEach((row) => {
+      const at = Number(row.dataset.at || 0.5);
+      const t = smooth(range(wipe, Math.max(0, at - 0.08), at + 0.08));
+      const a = row.querySelector(".swap-a");
+      const b = row.querySelector(".swap-b");
+      // Fade A out fully, then fade B in, so the two strings never overlap.
+      if (a) a.style.opacity = String(t < 0.5 ? 1 - t * 2 : 0);
+      if (b) b.style.opacity = String(t > 0.5 ? (t - 0.5) * 2 : 0);
+    });
+    const timeEl = $("#copy-time");
+    if (timeEl) timeEl.textContent = wipe >= 0.5 ? "8:16" : "8:14";
 
     setLabel(labelFindable, p >= 0.20);
     setLabel(labelBasics, p >= 0.46);

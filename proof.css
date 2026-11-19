@@ -381,3 +381,11 @@ html.prefers-static .stage,
   .stage-art.is-loaded .still,
   .caption{transition:none;}
 }
+
+/* Homepage uses the proof stage without darkening the rest of the site */
+html.proof-root.home{scroll-padding-top:72px !important;}
+body.is-static .scroll-spacer,
+html.prefers-static .scroll-spacer{display:none;}
+body.is-static .stage,
+html.prefers-static .stage{position:relative;top:0;}
+.has-ba-hero .proof-scroll{background:var(--atlantic-deep);color:var(--ivory);}

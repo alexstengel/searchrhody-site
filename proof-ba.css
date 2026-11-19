@@ -282,10 +282,61 @@
 }
 
 /* Longer positioning headline + support; keep CTAs visible */
-.ba-page .stage-copy h1{max-width:18ch; font-size:clamp(30px, 3.2vw, 48px); margin:18px 0 14px;}
-.ba-page .stage-copy .hero-sub{max-width:44ch; font-size:16px; line-height:1.5;}
+.ba-page .stage-copy h1, .has-ba-hero .stage-copy h1{max-width:18ch; font-size:clamp(30px, 3.2vw, 48px); margin:18px 0 14px;}
+.has-ba-hero .stage-copy .hero-sub, .ba-page .stage-copy .hero-sub{max-width:44ch; font-size:16px; line-height:1.5;}
 @media (max-width:768px), (orientation:portrait){
-  .ba-page .stage-copy h1{font-size:clamp(22px, 6.4vw, 28px); margin:6px 0 6px; max-width:none;}
-  .ba-page .stage-copy .hero-sub{font-size:12.5px; line-height:1.4;}
-  .ba-page .stage-copy .hero-actions{margin-top:8px;}
+  .ba-page .stage-copy h1, .has-ba-hero .stage-copy h1{font-size:clamp(22px, 6.4vw, 28px); margin:6px 0 6px; max-width:none;}
+  .has-ba-hero .stage-copy .hero-sub, .ba-page .stage-copy .hero-sub{font-size:12.5px; line-height:1.4;}
+  .has-ba-hero .stage-copy .hero-actions, .ba-page .stage-copy .hero-actions{margin-top:8px;}
 }
+
+/* Visual layers: only photos/backgrounds wipe. Text lives in .listing-copy so
+   strings crossfade as whole units and never splice together mid-wipe. */
+.listing-before .claim-pill,
+.listing-before .biz-name,
+.listing-before .biz-meta,
+.listing-before .hours-row,
+.listing-before .mid-block,
+.listing-before .reviews-block,
+.listing-before .notice,
+.listing-before .status,
+.listing-after .claim-pill,
+.listing-after .biz-name,
+.listing-after .biz-meta,
+.listing-after .hours-row,
+.listing-after .mid-block,
+.listing-after .reviews-block,
+.listing-after .notice,
+.listing-after .status{
+  visibility:hidden;
+}
+.listing-copy{
+  position:absolute; inset:0;
+  z-index:4;
+  pointer-events:none;
+  display:flex;
+  flex-direction:column;
+  color:var(--atlantic);
+  background:transparent;
+}
+.listing-copy .photo-spacer{
+  grid-area:photos;
+  height:132px;
+  margin:12px 0 0;
+}
+.listing-copy .status{color:var(--atlantic);}
+.swap{display:grid;}
+.swap > .swap-a,
+.swap > .swap-b{grid-area:1/1; margin:0;}
+.swap > .swap-b{opacity:0;}
+.swap.mid-block, .swap.reviews-block{min-height:0;}
+.notice-swap{
+  flex:none;
+  display:grid;
+  margin:8px 16px 18px;
+}
+.notice-swap .notice{margin:0; width:100%;}
+.listing-copy .claim-pill{grid-area:pill;}
+.listing-copy .swap[data-swap="pill"]{grid-area:pill;}
+.listing-copy .swap[data-swap="meta"]{grid-area:meta;}
+.listing-copy .swap[data-swap="hours"]{grid-area:hours;}
