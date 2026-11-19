@@ -16,3 +16,7 @@ Then open http://127.0.0.1:8854/
 
 - Package names, prices, plan names, and add-on prices are visible placeholders until offer copy is final.
 - Screenshots in `screenshots/` are gitignored.
+
+## Scroll proof
+
+`proof.html` is a local-only proof of the first lean scroll chapters. Open http://127.0.0.1:8854/proof.html — do not publish it.
