@@ -30,7 +30,7 @@ def pin_group(x,y,h,ids=''):
     sc=h/1230
     inner=pin_inner.replace('sr-wave','sr-wave'+ids).replace('sr-c','sr-c'+ids)
     return f'<g transform="translate({x:.1f} {y:.1f}) scale({sc:.5f}) translate(-60 -50)">{inner}</g>'
-def stacked(bg='#F7F5EF',search='#142C3E',rhody='#F1784B',tag='#142C3E'):
+def stacked(bg='#F7F5EF',search='#142C3E',rhody='#F46934',tag='#142C3E'):
     W=1400
     pinh=420; pinw=pinh*960/1230
     target=pinw*3.45
