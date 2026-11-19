@@ -20,3 +20,5 @@ Then open http://127.0.0.1:8854/
 ## Scroll proof
 
 `proof.html` is a local-only proof of the first lean scroll chapters. Open http://127.0.0.1:8854/proof.html — do not publish it.
+
+`proof-before-after.html` is a second local-only proof: a before-and-after of a generic business going from unclaimed basics to a starter setup. Open http://127.0.0.1:8854/proof-before-after.html — do not publish it.
