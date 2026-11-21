@@ -21,8 +21,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600;1,9..144,700&amp;family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&amp;display=swap" rel="stylesheet" />
-  <link rel="preload" as="image" href="assets/proof/phone-desktop.webp" type="image/webp" media="(min-width: 761px)" />
-  <link rel="preload" as="image" href="assets/proof/phone-mobile.webp" type="image/webp" media="(max-width: 760px)" />
+  <link
+    rel="preload"
+    as="image"
+    type="image/webp"
+    href="assets/hero/phone-1200.webp"
+    imagesrcset="assets/hero/phone-800.webp 800w, assets/hero/phone-1200.webp 1200w, assets/hero/phone-1600.webp 1600w"
+    imagesizes="(min-width: 1120px) 513px, (min-width: 901px) 45vw, calc(100vw - 40px)"
+    fetchpriority="high"
+  />
   <link rel="stylesheet" href="styles.css" />
   <script type="application/ld+json">
   {
@@ -81,15 +88,26 @@
         </div>
         <div class="hero-visual">
           <picture>
-            <source media="(min-width: 761px)" type="image/webp" srcset="assets/proof/phone-desktop.webp" />
-            <source media="(min-width: 761px)" type="image/jpeg" srcset="assets/proof/phone-desktop.jpg" />
-            <source type="image/webp" srcset="assets/proof/phone-mobile.webp" />
+            <source
+              type="image/avif"
+              srcset="assets/hero/phone-800.avif 800w, assets/hero/phone-1200.avif 1200w, assets/hero/phone-1600.avif 1600w"
+              sizes="(min-width: 1120px) 513px, (min-width: 901px) 45vw, calc(100vw - 40px)"
+            />
+            <source
+              type="image/webp"
+              srcset="assets/hero/phone-800.webp 800w, assets/hero/phone-1200.webp 1200w, assets/hero/phone-1600.webp 1600w"
+              sizes="(min-width: 1120px) 513px, (min-width: 901px) 45vw, calc(100vw - 40px)"
+            />
             <img
               class="hero-still"
-              src="assets/proof/phone-mobile.jpg"
-              width="720"
-              height="1280"
-              alt="A phone on a wooden shop counter, next to a mug, keys, and work gloves."
+              src="assets/hero/phone-1200.jpg"
+              srcset="assets/hero/phone-800.jpg 800w, assets/hero/phone-1200.jpg 1200w, assets/hero/phone-1600.jpg 1600w"
+              sizes="(min-width: 1120px) 513px, (min-width: 901px) 45vw, calc(100vw - 40px)"
+              width="1672"
+              height="941"
+              alt="Illustration of a phone showing a local search for 'plumber near me' with a map and a fictional plumbing business listing."
+              fetchpriority="high"
+              decoding="async"
             />
           </picture>
         </div>

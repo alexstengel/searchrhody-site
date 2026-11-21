@@ -141,7 +141,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{
 }
 .btn-navy:hover{background:var(--atlantic-deep)}
 
-/* Phone mock — HTML/CSS only, no generated imagery */
+/* Hero still: crop keeps the phone screen and listing in view, no distortion. */
 .hero-visual{display:flex;justify-content:center;align-items:center;min-width:0}
 .hero-visual picture{display:block;width:100%;min-width:0}
 .hero-still{
@@ -149,7 +149,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{
   height:auto;
   aspect-ratio:4/5;
   object-fit:cover;
-  object-position:58% 46%;
+  object-position:53% 100%;
   border-radius:22px;
   box-shadow:0 18px 40px rgba(0,0,0,.28);
   background:#cfc6b8;
@@ -813,7 +813,7 @@ h2{
   .path-card,.addon-grid{grid-template-columns:1fr}
   .path-mocks{grid-template-columns:1fr 1fr}
   .phone{width:min(240px,80%)}
-  .hero-still{aspect-ratio:4/3;object-position:50% 38%;max-height:420px}
+  .hero-still{aspect-ratio:4/3;object-position:53% 100%}
   .service-grid{grid-template-columns:1fr}
   .nav-toggle{display:flex}
   .nav-links{
@@ -846,7 +846,7 @@ h2{
   .contact-card{width:100%}
   .price-row{font-size:15px}
   .card,.step-card,.who-card,.service-card{padding:16px 14px 20px}
-  .hero-still{aspect-ratio:16/10;max-height:200px;object-position:50% 42%}
+  .hero-still{aspect-ratio:4/3;min-height:320px;object-position:53% 100%}
   .mock-name{font-size:16px}
   .service-card h3{font-size:22px;margin-top:14px}
 }
