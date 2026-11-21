@@ -1,8 +1,8 @@
 # SearchRhody
 
-Standalone static site for SearchRhody, a local visibility service from Alex Stengel in Johnston, Rhode Island.
+Standalone static site for SearchRhody, a local visibility service based in Johnston, Rhode Island.
 
-This folder is a **local draft only**. It is not deployed. The `CNAME` file contains `searchrhody.com` so it is ready if the domain is purchased and the site is published later. Do not push, publish, or buy the domain without Alex's review and approval.
+The live site is https://searchrhody.com/. Do not push or publish changes without review and approval.
 
 ## Preview
 
