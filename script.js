@@ -40,3 +40,24 @@ if ('IntersectionObserver' in window && !reduce) {
   );
   targets.forEach((t) => io.observe(t));
 }
+
+
+// Hero phone-screen accent. The UI is fully visible without this.
+(function () {
+  const stage = document.querySelector('.hero-stage');
+  if (!stage) return;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) return;
+  let done = false;
+  const accent = () => {
+    if (done) return;
+    const r = stage.getBoundingClientRect();
+    const visible = r.bottom > 80 && r.top < window.innerHeight * 0.92;
+    if (visible && window.scrollY > 8) {
+      done = true;
+      stage.classList.add('is-accent');
+      window.removeEventListener('scroll', accent);
+    }
+  };
+  window.addEventListener('scroll', accent, { passive: true });
+})();
