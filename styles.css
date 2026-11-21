@@ -569,6 +569,7 @@ h2{
 }
 
 .steps{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.steps > li::marker{content:none;}
 .step-num{
   display:grid;place-items:center;width:36px;height:36px;border-radius:50%;
   background:var(--atlantic);color:var(--ivory);font-weight:800;font-size:16px;margin-bottom:16px;
@@ -977,7 +978,7 @@ h2{
   font-size:16px;
   font-weight:700;
   color:var(--ink);
-  margin:0 0 18px;
+  margin:auto 0 18px;
   line-height:1.45;
 }
 
@@ -1141,4 +1142,105 @@ h2{
     color:var(--atlantic);
     flex:none;
   }
+}
+
+
+/* v2 incremental improvements */
+.btn{
+  min-height:44px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+.nav-cta{
+  min-height:44px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+.nav-toggle{min-width:44px;min-height:44px}
+.package-cta{min-height:48px}
+.contact-card{min-height:44px}
+
+.packages-limits-note{
+  margin:28px 0 0;
+  text-align:center;
+  font-size:15px;
+  font-weight:700;
+  color:var(--slate);
+  letter-spacing:.01em;
+}
+
+.knowing{
+  margin-top:40px;
+  max-width:800px;
+}
+.knowing-title{
+  font-family:var(--display);
+  font-optical-sizing:auto;
+  font-weight:600;
+  font-size:clamp(22px,3vw,28px);
+  letter-spacing:-.02em;
+  color:var(--atlantic);
+  margin:0 0 16px;
+}
+.knowing-list{display:grid;gap:10px}
+.knowing-item{
+  background:var(--ivory);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+.section-white .knowing-item{background:var(--ivory)}
+.knowing-item summary{
+  cursor:pointer;
+  font-weight:700;
+  font-size:16.5px;
+  padding:16px 20px;
+  list-style:none;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  line-height:1.35;
+  min-height:44px;
+  color:var(--atlantic);
+}
+.knowing-item summary::-webkit-details-marker{display:none}
+.knowing-item summary::after{
+  content:"+";
+  color:#2F6F68;
+  font-weight:800;
+  font-size:22px;
+  line-height:1;
+  flex:none;
+}
+.knowing-item[open] summary::after{content:"\2212"}
+.knowing-item p{
+  color:var(--slate);
+  font-size:15.5px;
+  padding:0 20px 18px;
+  max-width:68ch;
+}
+
+.contact-lede{
+  max-width:640px;
+  margin:0 auto 36px;
+}
+.contact-lede p{
+  color:#C9D4D1;
+  font-size:18px;
+  margin:0 0 12px;
+  line-height:1.6;
+}
+.contact-lede p:last-child{margin-bottom:0;font-weight:700;color:var(--ivory)}
+
+.faq-item summary{min-height:44px}
+
+@media (max-width:760px){
+  .about-grid{gap:28px}
+  .knowing{margin-top:32px}
+  .packages-limits-note{margin-top:22px}
+  .contact-lede p{font-size:16.5px}
+  .package-billing{white-space:normal}
 }
