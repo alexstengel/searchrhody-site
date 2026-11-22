@@ -804,7 +804,7 @@ h2{
   .brand-logo{height:40px}
 }
 @media (max-width:900px){
-  .pkg-grid,.who-grid,.about-grid,.benefits-grid{grid-template-columns:1fr}
+  .pkg-grid,.who-grid,.about-grid,.benefits-grid,.stat-grid{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr}
   .about-card{position:static}
   .hero-grid{grid-template-columns:1fr;gap:36px}
@@ -845,7 +845,7 @@ h2{
   .section{padding:68px 0}
   .contact-card{width:100%}
   .price-row{font-size:15px}
-  .card,.step-card,.who-card,.service-card{padding:16px 14px 20px}
+  .card,.step-card,.who-card,.service-card,.stat-card{padding:16px 14px 20px}
   .hero-still{aspect-ratio:4/3;min-height:320px;object-position:53% 100%}
   .mock-name{font-size:16px}
   .service-card h3{font-size:22px;margin-top:14px}
@@ -854,6 +854,100 @@ h2{
 
 .nowrap{white-space:nowrap}
 
+
+
+/* WHY GETTING FOUND MATTERS */
+.section-why{
+  background:#eef4f2;
+  background:color-mix(in srgb, var(--sea) 14%, var(--ivory));
+}
+.stat-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+  margin:0 0 40px;
+  align-items:stretch;
+}
+.stat-card{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-top:4px solid var(--sea);
+  border-radius:var(--radius);
+  padding:28px 28px 24px;
+  box-shadow:var(--shadow);
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+}
+.stat-figure{
+  font-family:var(--display);
+  font-optical-sizing:auto;
+  font-weight:700;
+  font-size:clamp(52px, 6.4vw, 76px);
+  line-height:1;
+  letter-spacing:-.04em;
+  color:var(--coral);
+  margin:0 0 10px;
+}
+.stat-label{
+  font-family:var(--display);
+  font-weight:600;
+  font-size:22px;
+  letter-spacing:-.02em;
+  color:var(--atlantic);
+  margin:0 0 12px;
+}
+.stat-desc{
+  font-size:16px;
+  line-height:1.6;
+  color:var(--slate);
+  margin:0 0 16px;
+  max-width:40ch;
+}
+.stat-source{
+  display:inline-flex;
+  align-items:center;
+  margin-top:auto;
+  padding:10px 0;
+  min-height:44px;
+  font-size:13px;
+  font-weight:600;
+  line-height:1.4;
+  color:#1F5C56;
+  text-underline-offset:3px;
+  text-decoration:underline;
+  text-decoration-thickness:1px;
+  width:fit-content;
+  max-width:100%;
+}
+.stat-source:hover{color:var(--atlantic)}
+.why-close{
+  font-size:18px;
+  line-height:1.6;
+  color:var(--ink);
+  max-width:38em;
+  margin:0 0 24px;
+}
+.why-cta{
+  min-height:48px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+.why-disclaimer{
+  margin-top:18px;
+  font-size:13.5px;
+  line-height:1.5;
+  color:var(--slate);
+  max-width:42em;
+}
+@media (max-width:900px){
+  .stat-grid{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  .stat-card{padding:22px 20px 20px}
+  .why-cta{width:100%}
+}
 
 /* PACKAGES — two premium cards + comparison */
 .sr-only{
