@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get Started | SearchRhody</title>
+  <meta name="description" content="Tell SearchRhody a little about your Rhode Island business. No pressure, no sales pitch. We'll see how we can help." />
+  <link rel="canonical" href="https://searchrhody.com/get-started.html" />
+  <meta name="theme-color" content="#142C3E" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="SearchRhody" />
+  <meta property="og:title" content="Get Started | SearchRhody" />
+  <meta property="og:description" content="Tell us a little about your business, and we'll see how we can help. No pressure, no sales pitch." />
+  <meta property="og:url" content="https://searchrhody.com/get-started.html" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="apple-touch-icon-180.png" sizes="180x180" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600;1,9..144,700&amp;family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip" href="#get-started-title">Skip to content</a>
+
+  <header class="nav" id="top">
+    <div class="wrap nav-inner">
+      <a href="index.html" class="brand" aria-label="SearchRhody, home">
+        <img class="brand-logo" src="brand/searchrhody-logo-horizontal.svg" alt="" width="191" height="46" />
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <nav id="nav-links" class="nav-links">
+        <a href="index.html#get-found">Get Found</a>
+        <a href="index.html#stay-found">Stay Found</a>
+        <a href="index.html#how-it-works">How it works</a>
+        <a href="index.html#who">Who it's for</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="get-started.html" class="nav-cta" aria-current="page">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <header class="page-hero get-started-hero">
+      <div class="wrap">
+        <p class="kicker get-started-kicker">Get started</p>
+        <h1 id="get-started-title">Let&#8217;s get more eyes on your business.</h1>
+        <p class="get-started-sub">Want more local customers finding you online? Tell us a little about your business, and we&#8217;ll see how we can help. No pressure, no sales pitch.</p>
+      </div>
+    </header>
+
+    <div class="page-body get-started-body">
+      <div class="wrap">
+        <div class="form-card" id="inquiry-panel">
+          <div class="form-success" id="form-success" hidden tabindex="-1">
+            <h2>Thanks for reaching out! We&#8217;ll be in touch soon.</h2>
+            <p>You can close this page, or <a href="index.html">head back to the homepage</a>.</p>
+          </div>
+
+          <form
+            id="inquiry-form"
+            class="inquiry-form"
+            action="thanks.html"
+            method="get"
+            novalidate
+          >
+            <div class="form-errors" id="form-errors" role="alert" hidden></div>
+
+            <div class="field">
+              <label for="name">Your name <span class="req">(required)</span></label>
+              <input id="name" name="name" type="text" autocomplete="name" autocapitalize="words" required maxlength="120" />
+              <p class="field-error" id="name-error" hidden></p>
+            </div>
+
+            <div class="field">
+              <label for="business">Business name <span class="req">(required)</span></label>
+              <input id="business" name="business" type="text" autocomplete="organization" required maxlength="160" />
+              <p class="field-error" id="business-error" hidden></p>
+            </div>
+
+            <div class="field">
+              <label for="email">Email <span class="req">(required)</span></label>
+              <input id="email" name="email" type="email" autocomplete="email" inputmode="email" spellcheck="false" required maxlength="160" />
+              <p class="field-error" id="email-error" hidden></p>
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone <span class="opt">(optional)</span></label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="40" />
+              <p class="field-error" id="phone-error" hidden></p>
+            </div>
+
+            <fieldset class="field field-checks">
+              <legend>What would you like help with? <span class="opt">(optional)</span></legend>
+              <label class="check-option">
+                <input type="checkbox" name="help" value="Getting found on Google" />
+                <span>Getting found on Google</span>
+              </label>
+              <label class="check-option">
+                <input type="checkbox" name="help" value="Getting more calls or inquiries" />
+                <span>Getting more calls or inquiries</span>
+              </label>
+              <label class="check-option">
+                <input type="checkbox" name="help" value="Improving my online reviews" />
+                <span>Improving my online reviews</span>
+              </label>
+              <label class="check-option">
+                <input type="checkbox" name="help" value="Not sure — just looking for guidance" />
+                <span>Not sure &#8212; just looking for guidance</span>
+              </label>
+            </fieldset>
+
+            <input type="hidden" name="interest" id="interest" value="" />
+
+            <!-- Honeypot: leave empty. Hidden from people, not from bots. -->
+            <div class="hp" aria-hidden="true">
+              <label for="website">Website</label>
+              <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <!-- Slot for Turnstile/hCaptcha once the form endpoint is connected. -->
+            <div id="form-spam-slot" class="form-spam-slot" hidden></div>
+
+            <button class="btn btn-solid why-cta inquiry-submit" type="submit" id="inquiry-submit">Let&#8217;s Talk</button>
+            <p class="form-note">We&#8217;ll use this only to follow up about your business. We don&#8217;t sell your information. You can also email <a href="mailto:getfound@searchrhody.com">getfound@searchrhody.com</a>.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <p>&copy; <span id="year">2026</span> SearchRhody · Johnston, Rhode Island · Local visibility, made simple.</p>
+      <p><a href="privacy.html">Privacy</a> · <a href="mailto:getfound@searchrhody.com">getfound@searchrhody.com</a> · <a href="index.html">Home</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="get-started.js"></script>
+</body>
+</html>

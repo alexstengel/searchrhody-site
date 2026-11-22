@@ -1338,3 +1338,94 @@ h2{
   .contact-lede p{font-size:16.5px}
   .package-billing{white-space:normal}
 }
+
+/* GET STARTED INQUIRY */
+.get-started-hero{padding:72px 0 36px}
+.get-started-kicker{color:var(--sea)}
+.get-started-hero h1{max-width:16em;margin-bottom:16px}
+.get-started-sub{
+  font-size:18px;line-height:1.6;color:#C9D4D1;
+  max-width:38em;margin:0;
+}
+.get-started-hero a{color:var(--ivory);text-underline-offset:3px}
+.get-started-hero a:hover{color:var(--coral)}
+.get-started-body{padding-top:36px}
+.form-card{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-top:4px solid var(--sea);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:32px 28px 28px;
+  max-width:640px;
+  margin-inline:auto;
+}
+.inquiry-form[hidden],.form-success[hidden]{display:none!important}
+.inquiry-form{display:flex;flex-direction:column;gap:20px}
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field label,.field legend{
+  font-weight:650;color:var(--atlantic);font-size:15px;
+}
+.field legend{margin-bottom:6px}
+.req{font-weight:600;color:var(--slate);font-size:13px}
+.opt{font-weight:500;color:var(--slate);font-size:13px}
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="tel"]{
+  width:100%;
+  min-height:48px;
+  padding:12px 14px;
+  border:1.5px solid var(--line);
+  border-radius:12px;
+  font:inherit;
+  font-size:16px;
+  color:var(--ink);
+  background:var(--white);
+}
+.field input:focus{
+  outline:3px solid var(--coral);
+  outline-offset:2px;
+  border-color:var(--atlantic);
+}
+.field input[aria-invalid="true"]{border-color:#b42318}
+.field-error,.form-errors{
+  color:#8B1E1E;font-size:14px;font-weight:600;margin:0;
+}
+.form-errors{
+  background:#FDECEC;border-radius:10px;padding:12px 14px;
+}
+.field-checks{border:0;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.check-option{
+  display:flex;align-items:flex-start;gap:12px;
+  min-height:44px;padding:8px 10px;border-radius:10px;
+  cursor:pointer;font-weight:500;color:var(--ink);
+}
+.check-option:hover{background:color-mix(in srgb, var(--sea) 10%, var(--ivory))}
+.check-option input{
+  width:20px;height:20px;margin-top:2px;flex:none;
+  accent-color:var(--atlantic);
+}
+.inquiry-submit{align-self:flex-start;min-height:48px}
+.form-note{font-size:14px;color:var(--slate);margin:0;max-width:42em}
+.form-note a{color:#1F5C56;font-weight:700;text-underline-offset:3px}
+.form-note a:hover{color:var(--atlantic)}
+.form-success h2{
+  font-size:clamp(28px,4vw,36px);max-width:16em;margin-bottom:12px;
+}
+.form-success p{color:var(--slate);font-size:17px}
+.form-success a{color:#1F5C56;font-weight:700;text-underline-offset:3px}
+.form-success:focus{outline:none}
+.hp{
+  position:absolute;left:-9999px;height:1px;width:1px;overflow:hidden;
+}
+.contact-email-fallback{
+  margin-top:22px;font-size:15px;color:#C9D4D1;
+}
+.contact-email-fallback a{color:var(--ivory);font-weight:700;text-underline-offset:3px}
+.contact-email-fallback a:hover{color:var(--coral)}
+@media (max-width:760px){
+  .form-card{padding:22px 18px 20px}
+  .inquiry-submit{width:100%}
+  .get-started-hero{padding:56px 0 28px}
+  .get-started-sub{font-size:16.5px}
+}
