@@ -1,9 +1,7 @@
 /* SearchRhody Get Started form.
- *
- * SWAP THIS ONE LINE after the sending domain is verified and the
- * Cloudflare Worker (see form-backend-worker.example.js) is live:
+ * Endpoint is the Cloudflare Worker. Swap this one line if the Worker URL changes.
  */
-const FORM_ENDPOINT = "https://FORM_ENDPOINT_PLACEHOLDER"; // e.g. https://searchrhody-form.YOUR_ACCOUNT.workers.dev
+const FORM_ENDPOINT = "https://searchrhody-form.searchrhody.workers.dev";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_RE = /^[+\d().\s-]{7,}$/;
@@ -50,7 +48,7 @@ if (form) {
       if (!res.ok) throw new Error("submit-failed");
       showSuccess();
     } catch (err) {
-      showFormError("Something went wrong sending your message. Please try again, or email getfound@searchrhody.com.");
+      showFormError('Something went wrong sending your message. Please try again, or email <a href="mailto:getfound@searchrhody.com">getfound@searchrhody.com</a>.');
       setPending(false);
     }
   });
@@ -143,7 +141,7 @@ function clearErrors() {
 
 function showFormError(message) {
   errorBox.hidden = false;
-  errorBox.textContent = message;
+  errorBox.innerHTML = message;
   errorBox.focus?.();
 }
 

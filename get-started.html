@@ -61,8 +61,8 @@
           <form
             id="inquiry-form"
             class="inquiry-form"
-            action="thanks.html"
-            method="get"
+            action="https://searchrhody-form.searchrhody.workers.dev"
+            method="post"
             novalidate
           >
             <div class="form-errors" id="form-errors" role="alert" hidden></div>
@@ -119,7 +119,7 @@
               <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
             </div>
 
-            <!-- Slot for Turnstile/hCaptcha once the form endpoint is connected. -->
+            <!-- Turnstile slot is unused until the Cloudflare permission is granted. Do not require a token. -->
             <div id="form-spam-slot" class="form-spam-slot" hidden></div>
 
             <button class="btn btn-solid why-cta inquiry-submit" type="submit" id="inquiry-submit">Let&#8217;s Talk</button>

@@ -1,10 +1,6 @@
-/* Example Cloudflare Worker for SearchRhody inquiries.
- * Not deployed. Do not put API keys in this file or in the static site.
- *
- * Once a free Resend account is created and a verified searchrhody.com
- * sending domain, deploy this Worker and store the key as the
- * RESEND_API_KEY secret. Then set FORM_ENDPOINT in get-started.js
- * to the Worker URL (one-line change).
+/* Cloudflare Worker "searchrhody-form" for SearchRhody inquiries.
+ * Secrets (set in Cloudflare, never in this repo): RESEND_API_KEY, TURNSTILE_SECRET.
+ * Sends the owner notification and the customer confirmation through Resend.
  */
 
 const OWNER = "getfound@searchrhody.com";
@@ -73,7 +69,23 @@ async function readPayload(request) {
     help: form.getAll("help").map(String),
     interest: String(form.get("interest") || ""),
     website: String(form.get("website") || ""),
+    "cf-turnstile-response": String(form.get("cf-turnstile-response") || ""),
   };
+}
+
+const MAX = 200;
+function clip(v) { return String(v || "").slice(0, MAX); }
+
+async function turnstileOk(env, token, ip) {
+  if (!env.TURNSTILE_SECRET) return true;
+  if (!token) return false;
+  const body = new FormData();
+  body.append("secret", env.TURNSTILE_SECRET);
+  body.append("response", token);
+  if (ip) body.append("remoteip", ip);
+  const res = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", { method: "POST", body });
+  const out = await res.json().catch(() => ({}));
+  return out.success === true;
 }
 
 function valid(data) {
@@ -105,6 +117,9 @@ export default {
 
     if (request.method === "OPTIONS") return new Response(null, { status: 204, headers });
     if (request.method !== "POST") return new Response("Method not allowed", { status: 405, headers });
+    if (origin && !ALLOWED_ORIGINS.includes(origin)) {
+      return Response.json({ ok: false, error: "forbidden" }, { status: 403, headers });
+    }
 
     let data;
     try {
@@ -125,10 +140,22 @@ export default {
       return Response.json({ ok: false, error: "invalid" }, { status: 400, headers });
     }
 
-    const name = data.name.trim();
-    const business = data.business.trim();
-    const email = data.email.trim();
+    const human = await turnstileOk(env, data["cf-turnstile-response"], request.headers.get("CF-Connecting-IP"));
+    if (!human) {
+      return Response.json({ ok: false, error: "verification" }, { status: 400, headers });
+    }
 
+    const name = clip(data.name).trim();
+    const business = clip(data.business).trim();
+    const email = clip(data.email).trim();
+    data = {
+      ...data,
+      phone: clip(data.phone),
+      interest: clip(data.interest),
+      help: (Array.isArray(data.help) ? data.help : []).slice(0, 4).map(clip),
+    };
+
+    try {
     await sendMail(env.RESEND_API_KEY, {
       from: FROM,
       to: [OWNER],
@@ -144,6 +171,10 @@ export default {
       subject: "Thanks for reaching out to SearchRhody!",
       text: confirmBody(name, business),
     });
+    } catch (err) {
+      console.log(String(err));
+      return Response.json({ ok: false, error: "send-failed" }, { status: 502, headers });
+    }
 
     if ((request.headers.get("content-type") || "").includes("application/json")) {
       return Response.json({ ok: true }, { headers });
