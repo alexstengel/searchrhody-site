@@ -1,8 +1,8 @@
 # SearchRhody
 
-Standalone static site for SearchRhody, a local visibility service based in Johnston, Rhode Island.
+Independent Rhode Island discovery guide and home of The Rhody Roundup newsletter.
 
-The live site is https://searchrhody.com/. Do not push or publish changes without review and approval.
+The live site is still the earlier service website on `main`. This 2.0 publication rebuild lives on the `searchrhody-2` branch and must not be merged or deployed without explicit approval. The service-site snapshot is tagged `service-site-v1`.
 
 ## Preview
 
@@ -12,17 +12,25 @@ python3 -m http.server 8854
 
 Then open http://127.0.0.1:8854/
 
-## Form backend
+There is no build step and no environment file. This is static HTML, CSS, and JavaScript, compatible with GitHub Pages. Keep the `CNAME` file when this is eventually deployed.
 
-Inquiry submissions from `get-started.html` are posted to a Cloudflare Worker (`searchrhody-form`, source in `worker/worker.js`) which sends the owner notification and the customer confirmation through Resend, from getfound@searchrhody.com. Secrets (the Resend API key, and a Turnstile secret later) live only in Cloudflare Worker settings, never in this repo. There is no build step and no environment file in the site.
+## Adding a story or a newsletter issue
+
+See `templates/README.md`. Copy a template out of `templates/` (those files are not in the navigation), replace every placeholder with approved copy and imagery, then link the new page from Discover and `sitemap.xml`.
+
+## Newsletter signup
+
+The newsletter form is visible but not connected to a provider. Leave `NEWSLETTER_ENDPOINT` empty in `script.js` until a provider is chosen and tested. See `newsletter-providers.md` for the comparison and recommendation.
+
+The existing Cloudflare Worker and Resend inquiry setup is intentionally untouched. Contact messages must not be added to a marketing list.
+
+## Brand
+
+Navy `#142C3E`, coral `#F1784B`, ivory `#F7F5EF`, sea glass `#69A9A1`. The header uses the existing pin plus a typographic SearchRhody wordmark so the old service tagline does not appear in the lockup. Original logo files remain in `brand/`.
 
 ## Notes
 
-- Packages are **Get Found** ($299 one-time) and **Stay Found** ($79/month, optional). Inquiry CTAs go to the Get Started form. A plain mailto:getfound@searchrhody.com remains in the footer as a fallback. There is no checkout.
-- Brand coral is `#F1784B`. Atlantic is `#142C3E`, ivory `#F7F5EF`, sea glass `#69A9A1`.
-- Screenshots in `screenshots/` are gitignored.
-- The homepage is a static hero (phone-on-counter still), two package cards, and a comparison table. There is no scroll animation on the homepage.
-
-## Archived proofs
-
-`proof.html` (search-story) and `proof-before-after.html` (before-and-after) are local archived proofs. They are not linked from the homepage.
+- Do not invent articles, subscriber counts, or stats.
+- Do not add checkout, affiliate links, or an unapproved family photo.
+- Do not change DNS, Cloudflare, or Resend from this branch.
+- Development placeholders must be replaced before launch.

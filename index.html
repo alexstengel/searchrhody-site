@@ -3,445 +3,217 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SearchRhody | Show up when locals are looking</title>
-  <meta name="description" content="SearchRhody helps Rhode Island businesses get found, build trust, and make it easier for customers to reach them. One-time setup, optional monthly help, no long-term contracts. Based in Johnston, RI." />
+  <title>SearchRhody | There’s more to Rhode Island. Let’s find it.</title>
+  <meta name="description" content="Independent Rhode Island discovery guide for interesting places, local makers, unique products, and family-friendly experiences. Home of The Rhody Roundup newsletter." />
   <link rel="canonical" href="https://searchrhody.com/" />
   <meta name="theme-color" content="#142C3E" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="SearchRhody" />
-  <meta property="og:title" content="SearchRhody | Show up when locals are looking" />
-  <meta property="og:description" content="Get found. Stay found. Your call. One-time setup, optional monthly help, and no long-term contracts for Rhode Island businesses." />
+  <meta property="og:title" content="SearchRhody | There’s more to Rhode Island. Let’s find it." />
+  <meta property="og:description" content="Independent Rhode Island discovery guide for interesting places, local makers, unique products, and family-friendly experiences. Home of The Rhody Roundup newsletter." />
   <meta property="og:url" content="https://searchrhody.com/" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="SearchRhody | Show up when locals are looking" />
-  <meta name="twitter:description" content="Get found. Stay found. Your call. One-time setup, optional monthly help, and no long-term contracts for Rhode Island businesses." />
+  <meta property="og:image" content="https://searchrhody.com/assets/og/searchrhody-og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SearchRhody | There’s more to Rhode Island. Let’s find it." />
+  <meta name="twitter:description" content="Independent Rhode Island discovery guide for interesting places, local makers, unique products, and family-friendly experiences. Home of The Rhody Roundup newsletter." />
+  <meta name="twitter:image" content="https://searchrhody.com/assets/og/searchrhody-og.png" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32" />
   <link rel="apple-touch-icon" href="apple-touch-icon-180.png" sizes="180x180" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600;1,9..144,700&amp;family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&amp;display=swap" rel="stylesheet" />
-  <link
-    rel="preload"
-    as="image"
-    type="image/webp"
-    href="assets/hero/phone-1200.webp"
-    imagesrcset="assets/hero/phone-800.webp 800w, assets/hero/phone-1200.webp 1200w, assets/hero/phone-1600.webp 1600w"
-    imagesizes="(min-width: 1120px) 513px, (min-width: 901px) 45vw, calc(100vw - 40px)"
-    fetchpriority="high"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,600&amp;family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "ProfessionalService"],
-    "name": "SearchRhody",
-    "description": "SearchRhody helps Rhode Island businesses get found and stay found: a one-time visibility setup, optional monthly support, and no long-term contracts.",
-    "url": "https://searchrhody.com/",
-    "email": "getfound@searchrhody.com",
-    "areaServed": {
-      "@type": "State",
-      "name": "Rhode Island"
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Johnston",
-      "addressRegion": "RI",
-      "addressCountry": "US"
-    }
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://searchrhody.com/#organization",
+        "name": "SearchRhody",
+        "url": "https://searchrhody.com/",
+        "logo": "https://searchrhody.com/icon-512.png",
+        "description": "Independent Rhode Island discovery guide for interesting places, local makers, unique products, and family-friendly experiences."
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://searchrhody.com/#website",
+        "name": "SearchRhody",
+        "url": "https://searchrhody.com/",
+        "publisher": { "@id": "https://searchrhody.com/#organization" }
+      }
+    ]
   }
   </script>
 </head>
 <body>
-  <a class="skip" href="#hero-title">Skip to content</a>
 
+  <a class="skip" href="#main">Skip to content</a>
   <header class="nav" id="top">
     <div class="wrap nav-inner">
       <a href="index.html" class="brand" aria-label="SearchRhody, home">
-        <img class="brand-logo" src="brand/searchrhody-logo-horizontal.svg" alt="" width="191" height="46" />
+        <img class="brand-pin" src="brand/searchrhody-pin-color.svg" alt="" width="34" height="42" />
+        <span class="brand-wordmark">Search<span>Rhody</span></span>
       </a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu"><span></span><span></span><span></span></button>
       <nav id="nav-links" class="nav-links">
-        <a href="#get-found">Get Found</a>
-        <a href="#stay-found">Stay Found</a>
-        <a href="#how-it-works">How it works</a>
-        <a href="#who">Who it's for</a>
-        <a href="#about">About</a>
-        <a href="#faq">FAQ</a>
-        <a href="get-started.html" class="nav-cta">Get in touch</a>
+        <a href="discover.html">Discover</a>
+        <a href="explore.html">Explore Rhody</a>
+        <a href="shop.html">Shop Rhody</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="newsletter.html" class="nav-cta">Newsletter</a>
       </nav>
     </div>
   </header>
-
   <main id="main">
     <section class="hero" aria-labelledby="hero-title">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Rhode Island · Local business visibility</p>
-          <h1 id="hero-title">Show up when<br /><em>locals are looking.</em></h1>
-          <p class="hero-sub">Your next customer is searching Google Maps or asking AI who to call. SearchRhody helps Rhode Island businesses get found, build trust, and make it easier for customers to reach them.</p>
-          <div class="hero-actions">
-            <a href="#packages" class="btn btn-solid">See the packages</a>
-            <a href="get-started.html" class="btn btn-ghost">Get in Touch</a>
-          </div>
-          <p class="hero-reassure">One-time setup. Optional monthly help. No long-term contracts.</p>
-        </div>
-        <div class="hero-visual">
-          <picture>
-            <source
-              type="image/avif"
-              srcset="assets/hero/phone-800.avif 800w, assets/hero/phone-1200.avif 1200w, assets/hero/phone-1600.avif 1600w"
-              sizes="(min-width: 1120px) 513px, (min-width: 901px) 45vw, calc(100vw - 40px)"
-            />
-            <source
-              type="image/webp"
-              srcset="assets/hero/phone-800.webp 800w, assets/hero/phone-1200.webp 1200w, assets/hero/phone-1600.webp 1600w"
-              sizes="(min-width: 1120px) 513px, (min-width: 901px) 45vw, calc(100vw - 40px)"
-            />
-            <img
-              class="hero-still"
-              src="assets/hero/phone-1200.jpg"
-              srcset="assets/hero/phone-800.jpg 800w, assets/hero/phone-1200.jpg 1200w, assets/hero/phone-1600.jpg 1600w"
-              sizes="(min-width: 1120px) 513px, (min-width: 901px) 45vw, calc(100vw - 40px)"
-              width="1670"
-              height="941"
-              alt="Illustration of a phone showing a local search for 'plumber near me' with a map and a fictional plumbing business listing."
-              fetchpriority="high"
-              decoding="async"
-            />
-          </picture>
-        </div>
-      </div>
-      <svg class="hero-wave" viewBox="0 0 1440 72" preserveAspectRatio="none" aria-hidden="true">
-        <path fill="currentColor" d="M0,40 C240,72 480,8 720,32 C960,56 1200,8 1440,36 L1440,72 L0,72 Z"></path>
-      </svg>
-    </section>
-
-    <section id="middle" class="section section-ivory" aria-labelledby="middle-title">
       <div class="wrap">
-        <p class="kicker">The middle ground</p>
-        <h2 id="middle-title">You don't need the whole agency. You just need to get found.</h2>
-        <div class="prose">
-          <p>Marketing shouldn't be all or nothing.</p>
-          <p>You can spend your evenings figuring out Google Maps and online reviews yourself. Or you can hire an agency and commit to services you might not need.</p>
-          <p>SearchRhody offers a simpler middle ground: practical improvements to your online presence, straightforward pricing, and the freedom to choose what happens next.</p>
-          <p>Start with a one-time setup. Continue month to month if you'd like.</p>
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span> A local guide to the Ocean State.</p>
+        <h1 id="hero-title">There’s more to Rhode Island. <em>Let’s find it.</em></h1>
+        <p class="hero-sub">Great places, local makers, weekend ideas, and the stories that make Rhode Island worth exploring.</p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="newsletter.html">Get the Rhody Roundup</a>
+          <a class="btn btn-ghost" href="discover.html">Explore the latest finds.</a>
         </div>
-        <p class="middle-close">Your business. Your choice.</p>
       </div>
     </section>
 
-    <section id="why-found" class="section section-why" aria-labelledby="why-found-title">
+    <section class="section" aria-labelledby="featured-title">
       <div class="wrap">
-        <p class="kicker">Why getting found matters</p>
-        <h2 id="why-found-title">Your next customer is looking. What are they finding?</h2>
-        <p class="section-lede">A complete, accurate Google Business Profile helps customers find the information they need, evaluate your business, and get in touch.</p>
-        <div class="stat-grid">
-          <article class="stat-card">
-            <p class="stat-figure">7&#215;</p>
-            <h3 class="stat-label">More clicks</h3>
-            <p class="stat-desc">Google reports that businesses with complete profiles receive 7&#215; more clicks.</p>
-            <a class="stat-source" href="https://services.google.com/fh/files/helpcenter/services_gbp_best_practices_playbook_2026.pdf" target="_blank" rel="noopener">Google Business Profile Best Practices Playbook, 2026</a>
+        <p class="section-kicker">Discover</p>
+        <h2 id="featured-title">Featured stories</h2>
+        <p class="section-intro">First stories are still being reported. The cards below are development placeholders only and must be replaced with approved stories before launch. They are not published articles.</p>
+        <div class="card-grid">
+          <article class="story-card">
+            <div class="story-media" aria-hidden="true"><span>Image to come</span></div>
+            <div class="body">
+              <span class="dev-badge">DEV PLACEHOLDER</span>
+              <h3>A Rhode Island-made gift guide under $50</h3>
+              <p>Editorial assignment only. Not a published guide, and no products have been selected or reviewed yet.</p>
+            </div>
           </article>
-          <article class="stat-card">
-            <p class="stat-figure">97%</p>
-            <h3 class="stat-label">Read reviews</h3>
-            <p class="stat-desc">BrightLocal&#8217;s 2026 Local Consumer Review Survey reports that 97% of consumers read reviews for local businesses.</p>
-            <a class="stat-source" href="https://www.brightlocal.com/research/local-consumer-review-survey" target="_blank" rel="noopener">BrightLocal, Local Consumer Review Survey 2026</a>
+          <article class="story-card">
+            <div class="story-media" aria-hidden="true"><span>Image to come</span></div>
+            <div class="body">
+              <span class="dev-badge">DEV PLACEHOLDER</span>
+              <h3>A Saturday exploring [verified town]</h3>
+              <p>Editorial assignment only. The town will be named after it has been visited and verified. No itinerary is published yet.</p>
+            </div>
+          </article>
+          <article class="story-card">
+            <div class="story-media" aria-hidden="true"><span>Image to come</span></div>
+            <div class="body">
+              <span class="dev-badge">DEV PLACEHOLDER</span>
+              <h3>Meet a local maker: [interview and permission required]</h3>
+              <p>Editorial assignment only. This spotlight will be published after an interview and the maker’s permission.</p>
+            </div>
           </article>
         </div>
-        <p class="why-close">You don't need a full marketing agency to start improving your online presence. You just need to get the essentials right.</p>
-        <a class="btn btn-solid why-cta" href="get-started.html">Tell Us About Your Business</a>
-        <p class="why-disclaimer">Industry statistics, not SearchRhody customer results. Individual results vary.</p>
       </div>
     </section>
 
-    <section id="packages" class="section section-white" aria-labelledby="packages-title">
+    <section class="section" style="padding-top:0" aria-labelledby="cats-title">
       <div class="wrap">
-        <p class="kicker">Packages</p>
-        <h2 id="packages-title">Simple services. No big-agency baggage.</h2>
-        <p class="section-lede">You don't need a huge marketing budget to make a better first impression online. Start with a one-time setup, then decide if you'd like a little help keeping things up to date.</p>
-        <p class="packages-reassure">Straightforward pricing. Clear deliverables. No long-term commitments.</p>
-
-        <div class="package-grid">
-          <article class="package-card package-get" id="get-found" aria-labelledby="get-found-title">
-            <h3 id="get-found-title">Get Found</h3>
-            <p class="package-price"><span class="package-amount">$299</span> <span class="package-billing">· One-time setup</span></p>
-            <p class="package-headline">Get your business ready to be found.</p>
-            <ul class="package-includes">
-              <li>Google Business Profile review and optimization.</li>
-              <li>AI-assisted business and service descriptions.</li>
-              <li>Review-request toolkit.</li>
-              <li>Basic online visibility audit.</li>
-              <li>Before-and-after summary and handoff.</li>
-            </ul>
-            <p class="package-reassure-line">One project. One price. No ongoing obligation.</p>
-            <a class="btn btn-solid package-cta" href="get-started.html?interest=get-found">Get Found — Let's Talk</a>
-          </article>
-
-          <article class="package-card package-stay" id="stay-found" aria-labelledby="stay-found-title">
-            <h3 id="stay-found-title">Stay Found</h3>
-            <p class="package-price"><span class="package-amount">$79</span><span class="package-billing">/month · Optional monthly support</span></p>
-            <p class="package-headline">Keep your online presence in good shape.</p>
-            <ul class="package-includes">
-              <li>Monthly Google Business Profile check.</li>
-              <li>Approved business information updates.</li>
-              <li>Up to two profile posts or photo updates.</li>
-              <li>Up to five drafted review responses.</li>
-              <li>Simple monthly activity report.</li>
-            </ul>
-            <p class="package-reassure-line">Month to month. Stay because it's useful, not because you're locked in.</p>
-            <a class="btn btn-sea package-cta" href="get-started.html?interest=stay-found">Ask About Monthly Care</a>
-          </article>
-        </div>
-
-        <p class="packages-limits-note">One location · No guaranteed rankings</p>
-
-        <div class="knowing" id="knowing">
-          <h3 class="knowing-title">A few things worth knowing</h3>
-          <div class="knowing-list">
-            <details class="knowing-item">
-              <summary>Services cover one business location</summary>
-              <p>Get Found and Stay Found each cover one business location. Stay Found is available as a continuation of Get Found.</p>
-            </details>
-            <details class="knowing-item">
-              <summary>What you provide</summary>
-              <p>Customers provide accurate business details, photos, and authorized account access. Get Found works with an existing eligible Google Business Profile, or a straightforward new setup where verification is possible. You approve public-facing content before it goes live.</p>
-            </details>
-            <details class="knowing-item">
-              <summary>What's not included</summary>
-              <p>Complicated verification, suspended profile recovery, extensive directory changes, website development, and paid advertising are not included.</p>
-            </details>
-            <details class="knowing-item">
-              <summary>No guaranteed rankings, leads, or AI recommendations</summary>
-              <p>Search rankings, leads, approval timelines, and AI recommendations are not guaranteed. We focus on accurate information, complete profiles, and practical, approved improvements.</p>
-            </details>
-            <details class="knowing-item">
-              <summary>Monthly support has defined activity limits</summary>
-              <p>Stay Found includes one monthly profile health check, approved business information updates, up to two profile posts or photo updates, and up to five drafted review responses. There is no long-term service commitment. Billing and cancellation terms will be provided before you enroll.</p>
-            </details>
-          </div>
+        <h2 id="cats-title">Browse by interest</h2>
+        <p class="section-intro">Start with a section of the site. Family Rhody and Meet Rhody will appear as story tags once we have approved pieces in those areas.</p>
+        <div class="cat-list">
+          <a class="cat-pill" href="discover.html">Discover</a>
+          <a class="cat-pill" href="explore.html">Explore Rhody</a>
+          <a class="cat-pill" href="shop.html">Shop Rhody</a>
+          <span class="cat-pill is-quiet">Family Rhody — coming later</span>
+          <span class="cat-pill is-quiet">Meet Rhody — coming later</span>
         </div>
       </div>
     </section>
 
-    <section id="compare" class="section section-ivory" aria-labelledby="compare-title">
+    <section class="section" style="padding-top:0" aria-labelledby="made-title">
       <div class="wrap">
-        <p class="kicker">Comparison</p>
-        <h2 id="compare-title">What's in each package</h2>
-        <div class="compare-scroll" tabindex="0">
-          <table class="compare-table">
-            <caption class="sr-only">Side-by-side comparison of Get Found and Stay Found</caption>
-            <thead>
-              <tr>
-                <th scope="col">Feature</th>
-                <th scope="col">Get Found</th>
-                <th scope="col">Stay Found</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">Google profile audit</th>
-                <td data-label="Get Found">Included</td>
-                <td data-label="Stay Found">Monthly check</td>
-              </tr>
-              <tr>
-                <th scope="row">Profile optimization</th>
-                <td data-label="Get Found">Included</td>
-                <td data-label="Stay Found">Ongoing minor updates</td>
-              </tr>
-              <tr>
-                <th scope="row">AI-assisted descriptions</th>
-                <td data-label="Get Found">Included</td>
-                <td data-label="Stay Found">As needed within scope</td>
-              </tr>
-              <tr>
-                <th scope="row">Review-request toolkit</th>
-                <td data-label="Get Found">Included</td>
-                <td data-label="Stay Found">Existing toolkit maintained</td>
-              </tr>
-              <tr>
-                <th scope="row">Review response drafts</th>
-                <td data-label="Get Found">Not included</td>
-                <td data-label="Stay Found">Up to 5/month</td>
-              </tr>
-              <tr>
-                <th scope="row">Profile posts</th>
-                <td data-label="Get Found">Not included</td>
-                <td data-label="Stay Found">Up to 2/month</td>
-              </tr>
-              <tr>
-                <th scope="row">Completion or activity report</th>
-                <td data-label="Get Found">Included</td>
-                <td data-label="Stay Found">Monthly</td>
-              </tr>
-              <tr>
-                <th scope="row">Long-term commitment</th>
-                <td data-label="Get Found">None</td>
-                <td data-label="Stay Found">None</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="compare-note">AI assists with content preparation. A human reviews the work and implements approved changes.</p>
-      </div>
-    </section>
-
-    <section id="how-it-works" class="section section-white" aria-labelledby="how-title">
-      <div class="wrap">
-        <p class="kicker">How it works</p>
-        <h2 id="how-title">Three simple steps</h2>
-        <ol class="steps">
-          <li class="step-card">
-            <span class="step-num" aria-hidden="true">1</span>
-            <h3>Tell us about your business</h3>
-            <p>Share your business details, services, and current online presence.</p>
-          </li>
-          <li class="step-card">
-            <span class="step-num" aria-hidden="true">2</span>
-            <h3>We get to work</h3>
-            <p>We review your profile, prepare improvements, confirm the details, and implement approved changes.</p>
-          </li>
-          <li class="step-card">
-            <span class="step-num" aria-hidden="true">3</span>
-            <h3>You're in control</h3>
-            <p>Receive a summary of completed improvements. Stop after setup or choose optional monthly support.</p>
-          </li>
-        </ol>
-        <p class="how-note">No complicated onboarding. No mandatory ongoing retainer.</p>
-      </div>
-    </section>
-
-    <section id="who" class="section section-ivory" aria-labelledby="who-title">
-      <div class="wrap">
-        <p class="kicker">Who it's for</p>
-        <h2 id="who-title">Local trades, shops, and owner&#8209;operators</h2>
-        <p class="section-lede">Built for Rhode Island small businesses that want to be easy to find, without a big marketing budget or a complicated plan.</p>
-        <div class="who-grid">
-          <article class="who-card">
-            <span class="who-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.7 19.1 13.6 10c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.3z"/></svg>
-            </span>
-            <h3>Trades</h3>
-            <p>Plumbers, HVAC, landscapers, electricians, and other field services.</p>
-          </article>
-          <article class="who-card">
-            <span class="who-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-7 9 7v10a1 1 0 01-1 1H4a1 1 0 01-1-1V10z"/><path d="M9 21V12h6v9"/></svg>
-            </span>
-            <h3>Shops</h3>
-            <p>Salons, auto shops, and local storefronts that live on word of mouth.</p>
-          </article>
-          <article class="who-card">
-            <span class="who-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"/><path d="M5.5 19c.8-3.2 3.2-5 6.5-5s5.7 1.8 6.5 5"/></svg>
-            </span>
-            <h3>Owner-operators</h3>
-            <p>Owners who don't have a marketing team and don't want to become one.</p>
-          </article>
+        <p class="section-kicker">Shop Rhody</p>
+        <h2 id="made-title">Made in Rhode Island</h2>
+        <p class="section-intro">A collection of Rhode Island-made finds will live here once stories and makers are approved. No products, prices, or partner links are listed yet.</p>
+        <div class="coming-soon">
+          <p><strong>First collection coming soon.</strong> This is not a store, and there is no checkout on SearchRhody.</p>
+          <p style="margin-top:10px"><a href="shop.html">Visit Shop Rhody</a> for the placeholder page, or <a href="newsletter.html">get The Rhody Roundup</a> when signup is connected.</p>
         </div>
       </div>
     </section>
 
-    <section id="about" class="section section-white" aria-labelledby="about-title">
-      <div class="wrap about-grid">
+    <section class="section" style="padding-top:0" aria-labelledby="founder-title">
+      <div class="wrap founder">
         <div>
-          <p class="kicker">About</p>
-          <h2 id="about-title">Local business. Local help. No marketing mumbo jumbo.</h2>
-          <div class="prose">
-            <p>SearchRhody is a Rhode Island-based business built around a simple idea: local businesses deserve to be found just as easily as the big guys.</p>
-            <p>We help business owners make sense of Google Maps, online reviews, and AI search — without having to become marketing experts themselves.</p>
-            <p>You focus on running your business. We'll help people find it.</p>
-          </div>
+          <p class="section-kicker">About</p>
+          <h2 id="founder-title">A note from the founders</h2>
+          <blockquote>
+            <p>We didn’t grow up in Rhode Island. We moved here, made it home, and kept finding new places we wished we’d discovered sooner. SearchRhody is our way of sharing those finds—and meeting more of the people who make this little state special.</p>
+          </blockquote>
+          <p class="note">Draft copy, pending founder confirmation before launch. <a href="about.html">Read more about SearchRhody</a>.</p>
         </div>
-        <aside class="about-card" aria-label="A few facts about SearchRhody">
-          <ul class="about-facts">
-            <li><strong>Johnston, RI</strong><span>Based here, working with local businesses.</span></li>
-            <li><strong>Straightforward help</strong><span>Practical, and honest about what will and won't help.</span></li>
-            <li><strong>Your call</strong><span>One-time setup, optional monthly help, and no long-term contracts.</span></li>
-          </ul>
-        </aside>
-      </div>
-    </section>
-
-    <section id="faq" class="section section-ivory" aria-labelledby="faq-title">
-      <div class="wrap">
-        <p class="kicker">FAQ</p>
-        <h2 id="faq-title">A few straightforward answers</h2>
-        <div class="faq-list">
-          <details class="faq-item">
-            <summary>Am I locked into a contract?</summary>
-            <p>No. Get Found is a one-time service, and Stay Found is optional monthly support. There's no annual commitment or required ongoing plan.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Can I cancel Stay Found whenever I want?</summary>
-            <p>Yes. Stay Found is month to month. You can request cancellation without an annual commitment or early termination penalty. We'll explain the billing and cancellation details before you enroll.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Do I have to sign up for monthly service?</summary>
-            <p>No. Get Found is a standalone, one-time service. Monthly support is completely optional.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Do I own my Google Business Profile?</summary>
-            <p>Your Google Business Profile stays yours. SearchRhody works through authorized access, and you retain ownership and control of your business information.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Is Google Business Profile free?</summary>
-            <p>Yes. Google Business Profile itself is free. You're paying SearchRhody for the time and work involved in reviewing, preparing, and optimizing your business presence.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Will I rank first on Google or be recommended by ChatGPT?</summary>
-            <p>No one can guarantee that. We focus on accurate information, complete profiles, and practical improvements that make your business easier for customers and search tools to understand.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Does AI do all the work?</summary>
-            <p>We use AI to assist with research, content preparation, and reporting. All customer information and public-facing changes are reviewed before implementation.</p>
-          </details>
-          <details class="faq-item">
-            <summary>What about AI search optimization?</summary>
-            <p>We can review publicly accessible information for clarity and consistency, but we do not guarantee AI recommendations or offer an unverified ChatGPT profile setup.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Do you work for Google or OpenAI?</summary>
-            <p>No. SearchRhody is independent and not affiliated with Google or OpenAI. We use their public tools and profile pages on your behalf.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Do I need a website?</summary>
-            <p>A website helps, but this work is about your Google Business Profile and publicly accessible business information. If you don't have a site, we can still get a lot done. Website design and development are not included.</p>
-          </details>
-          <details class="faq-item">
-            <summary>What do you need from me?</summary>
-            <p>Accurate business details, photos, and access to your Google Business Profile (or help creating one if a straightforward setup is possible). We'll tell you exactly what we need before we start.</p>
-          </details>
+        <div class="photo-ph">
+          Photo placeholder — an approved founder photo can be added here. Family or child photos will not be used without explicit permission.
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section section-navy contact" aria-labelledby="contact-title">
+    <section class="signup-block" aria-labelledby="roundup-title">
       <div class="wrap">
-        <p class="kicker">Contact</p>
-        <h2 id="contact-title">Let's talk about your business</h2>
-        <div class="contact-lede">
-          <p>Not sure how your business looks online? Send us your business name and a link to your Google listing or website.</p>
-          <p>We'll take a look and let you know where SearchRhody might be able to help.</p>
-          <p>No pressure. No long-term commitment.</p>
-        </div>
-        <div class="contact-actions">
-          <a class="btn btn-solid" href="get-started.html">Let&#8217;s Talk</a>
-        </div>
-        <p class="contact-email-fallback">Or email <a href="mailto:getfound@searchrhody.com">getfound@searchrhody.com</a></p>
-        <p class="contact-close">Get found. Stay found. Your call.</p>
+        <p class="section-kicker">The Rhody Roundup</p>
+        <h2 id="roundup-title">A few good Rhode Island discoveries, delivered weekly.</h2>
+        <p class="section-intro">Interesting places, independent shops, local products, and ideas for your next outing. The first issue is still being prepared, and weekly sending will start once that issue is ready. We don’t claim an existing subscriber list or archive.</p>
+
+            <!-- OPEN DECISION: newsletter provider / endpoint is not configured. This form does not submit data. -->
+            <form class="signup-form" id="signup-home" data-newsletter-form novalidate>
+              <div class="signup-fields">
+                <div class="form-errors" role="alert" hidden></div>
+                <div class="field">
+                  <label for="signup-home-email">Email <span class="req">(required)</span></label>
+                  <input id="signup-home-email" name="email" type="email" autocomplete="email" inputmode="email" spellcheck="false" required maxlength="160" />
+                  <p class="field-error email-error" hidden></p>
+                </div>
+                <div class="field">
+                  <label for="signup-home-name">First name <span class="opt">(optional)</span></label>
+                  <input id="signup-home-name" name="first_name" type="text" autocomplete="given-name" maxlength="80" />
+                </div>
+                <div class="hp" aria-hidden="true">
+                  <label for="signup-home-website">Website</label>
+                  <input id="signup-home-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+                </div>
+                <label class="check-option" for="signup-home-consent">
+                  <input id="signup-home-consent" name="consent" type="checkbox" required />
+                  <span>I want to receive The Rhody Roundup by email. I understand I can unsubscribe at any time. See our <a href="privacy.html">Privacy</a> page.</span>
+                </label>
+                <p class="field-error consent-error" hidden></p>
+                <button class="btn btn-solid" type="submit">Get the Rhody Roundup</button>
+                <p class="form-note">Signup isn’t connected to an email provider yet, so submitting this preview form will not store your email. We’ll turn this on after a provider is chosen and tested.</p>
+              </div>
+              <div class="form-success" hidden tabindex="-1">
+                <h2>Thanks for trying the form.</h2>
+                <p>Newsletter signup isn’t connected yet, so your email was not submitted. Once a provider is chosen and tested, this form will subscribe you here.</p>
+              </div>
+            </form>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="wrap footer-inner">
-      <p>&copy; <span id="year">2026</span> SearchRhody · Johnston, Rhode Island · Local visibility, made simple.</p>
-      <p><a href="privacy.html">Privacy</a> · <a href="mailto:getfound@searchrhody.com">getfound@searchrhody.com</a> · <a href="#top">Back to top <span aria-hidden="true">↑</span></a></p>
+      <div>
+        <a href="index.html" class="brand" aria-label="SearchRhody, home">
+          <img class="brand-pin" src="brand/searchrhody-pin-color.svg" alt="" width="34" height="42" />
+          <span class="brand-wordmark">Search<span>Rhody</span></span>
+        </a>
+        <p class="fine">&copy; <span id="year">2026</span> SearchRhody · An independent guide to Rhode Island.</p>
+      </div>
+      <p class="footer-links">
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="disclosures.html">Disclosures</a>
+        <a href="newsletter.html">Newsletter</a>
+      </p>
     </div>
   </footer>
-
   <script src="script.js"></script>
 </body>
 </html>

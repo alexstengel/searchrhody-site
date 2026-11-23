@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Rhody Roundup | SearchRhody</title>
+  <meta name="description" content="A few good Rhode Island discoveries, delivered weekly. Interesting places, independent shops, local products, and ideas for your next outing." />
+  <link rel="canonical" href="https://searchrhody.com/newsletter.html" />
+  <meta name="theme-color" content="#142C3E" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="SearchRhody" />
+  <meta property="og:title" content="The Rhody Roundup | SearchRhody" />
+  <meta property="og:description" content="A few good Rhode Island discoveries, delivered weekly. Interesting places, independent shops, local products, and ideas for your next outing." />
+  <meta property="og:url" content="https://searchrhody.com/newsletter.html" />
+  <meta property="og:image" content="https://searchrhody.com/assets/og/searchrhody-og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Rhody Roundup | SearchRhody" />
+  <meta name="twitter:description" content="A few good Rhode Island discoveries, delivered weekly. Interesting places, independent shops, local products, and ideas for your next outing." />
+  <meta name="twitter:image" content="https://searchrhody.com/assets/og/searchrhody-og.png" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="apple-touch-icon-180.png" sizes="180x180" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,600&amp;family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="nav" id="top">
+    <div class="wrap nav-inner">
+      <a href="index.html" class="brand" aria-label="SearchRhody, home">
+        <img class="brand-pin" src="brand/searchrhody-pin-color.svg" alt="" width="34" height="42" />
+        <span class="brand-wordmark">Search<span>Rhody</span></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <nav id="nav-links" class="nav-links">
+        <a href="discover.html">Discover</a>
+        <a href="explore.html">Explore Rhody</a>
+        <a href="shop.html">Shop Rhody</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="newsletter.html" class="nav-cta" aria-current="page">Newsletter</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="page-hero">
+      <div class="wrap">
+        <p class="section-kicker">Newsletter</p>
+        <h1>The Rhody Roundup</h1>
+        <p class="lede">A few good Rhode Island discoveries, delivered weekly. Interesting places, independent shops, local products, and ideas for your next outing.</p>
+      </div>
+    </header>
+    <div class="prose-page">
+      <div class="wrap">
+
+        <div class="prose">
+          <h2>What you’ll get</h2>
+          <p>The Rhody Roundup is SearchRhody’s email newsletter. Each issue is meant to be a short, useful note: a few finds worth your time, not an inbox full of filler.</p>
+          <p>We’re preparing the first issues now. When we start sending, the plan is a weekly note. We’ll confirm that cadence when the first issue is ready. This page does not have an existing archive, and we don’t claim a subscriber count.</p>
+          <h2>A sample issue</h2>
+        </div>
+        <div class="coming-soon" style="margin:16px 0 32px">
+          <p><strong>Sample issue coming soon.</strong> When the first Roundup is ready, an example will be published here. We will not invent a back issue to preview the design.</p>
+        </div>
+        <div class="prose">
+          <h2>Subscribe</h2>
+          <p>Use the form below when signup is connected. You’ll get a confirmation step from the email provider we choose, and every note will include a way to unsubscribe. We won’t add people who write to us through the contact page to this list.</p>
+        </div>
+
+            <!-- OPEN DECISION: newsletter provider / endpoint is not configured. This form does not submit data. -->
+            <form class="signup-form" id="signup-newsletter" data-newsletter-form novalidate>
+              <div class="signup-fields">
+                <div class="form-errors" role="alert" hidden></div>
+                <div class="field">
+                  <label for="signup-newsletter-email">Email <span class="req">(required)</span></label>
+                  <input id="signup-newsletter-email" name="email" type="email" autocomplete="email" inputmode="email" spellcheck="false" required maxlength="160" />
+                  <p class="field-error email-error" hidden></p>
+                </div>
+                <div class="field">
+                  <label for="signup-newsletter-name">First name <span class="opt">(optional)</span></label>
+                  <input id="signup-newsletter-name" name="first_name" type="text" autocomplete="given-name" maxlength="80" />
+                </div>
+                <div class="hp" aria-hidden="true">
+                  <label for="signup-newsletter-website">Website</label>
+                  <input id="signup-newsletter-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+                </div>
+                <label class="check-option" for="signup-newsletter-consent">
+                  <input id="signup-newsletter-consent" name="consent" type="checkbox" required />
+                  <span>I want to receive The Rhody Roundup by email. I understand I can unsubscribe at any time. See our <a href="privacy.html">Privacy</a> page.</span>
+                </label>
+                <p class="field-error consent-error" hidden></p>
+                <button class="btn btn-solid" type="submit">Get the Rhody Roundup</button>
+                <p class="form-note">Signup isn’t connected to an email provider yet, so submitting this preview form will not store your email. We’ll turn this on after a provider is chosen and tested.</p>
+              </div>
+              <div class="form-success" hidden tabindex="-1">
+                <h2>Thanks for trying the form.</h2>
+                <p>Newsletter signup isn’t connected yet, so your email was not submitted. Once a provider is chosen and tested, this form will subscribe you here.</p>
+              </div>
+            </form>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div>
+        <a href="index.html" class="brand" aria-label="SearchRhody, home">
+          <img class="brand-pin" src="brand/searchrhody-pin-color.svg" alt="" width="34" height="42" />
+          <span class="brand-wordmark">Search<span>Rhody</span></span>
+        </a>
+        <p class="fine">&copy; <span id="year">2026</span> SearchRhody · An independent guide to Rhode Island.</p>
+      </div>
+      <p class="footer-links">
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="disclosures.html">Disclosures</a>
+        <a href="newsletter.html">Newsletter</a>
+      </p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
