@@ -1,6 +1,7 @@
-// SearchRhody 2.0 — navigation, footer year, newsletter form UI, legacy inquiry notes.
-// OPEN DECISION: newsletter provider is not chosen. Do not POST subscriber data anywhere.
-const NEWSLETTER_ENDPOINT = ""; // open decision — leave empty until a provider is approved and tested
+// SearchRhody 2.0 — navigation, footer year, newsletter form, legacy inquiry notes.
+// Newsletter signups post to Buttondown as a normal form (not fetch), so confirmation
+// and any CAPTCHA can complete. See https://docs.buttondown.com/building-your-subscriber-base
+const NEWSLETTER_ENDPOINT = "https://buttondown.com/api/emails/embed-subscribe/searchrhody";
 
 // Mobile nav
 const toggle = document.querySelector(".nav-toggle");
@@ -35,6 +36,20 @@ if (legacyNote) {
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+function ensureButtondownFrame() {
+  let iframe = document.getElementById("buttondown-frame");
+  if (!iframe) {
+    iframe = document.createElement("iframe");
+    iframe.id = "buttondown-frame";
+    iframe.name = "buttondown-frame";
+    iframe.title = "Newsletter signup";
+    iframe.setAttribute("aria-hidden", "true");
+    iframe.style.cssText = "position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);border:0;";
+    document.body.appendChild(iframe);
+  }
+  return iframe;
+}
+
 document.querySelectorAll("[data-newsletter-form]").forEach((form) => {
   const errorBox = form.querySelector(".form-errors");
   const success = form.querySelector(".form-success");
@@ -43,13 +58,21 @@ document.querySelectorAll("[data-newsletter-form]").forEach((form) => {
   const emailError = form.querySelector(".email-error");
   const consent = form.querySelector("input[name='consent']");
   const consentError = form.querySelector(".consent-error");
+  const honeypot = form.querySelector("input[name='website']");
+
+  // JS users get our accessible errors; no-JS users keep native required checks (including consent).
+  form.noValidate = true;
+  form.action = NEWSLETTER_ENDPOINT;
+  form.method = "post";
+
+  let finished = false;
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
+    if (finished) return;
     clearFormErrors();
 
-    const website = form.elements.website && form.elements.website.value.trim();
-    if (website) {
+    if (honeypot && honeypot.value.trim()) {
       showLocalSuccess();
       return;
     }
@@ -88,12 +111,18 @@ document.querySelectorAll("[data-newsletter-form]").forEach((form) => {
       return;
     }
 
-    if (!NEWSLETTER_ENDPOINT) {
-      showLocalSuccess();
-      return;
-    }
+    // Post as a normal form into a hidden iframe so we can stay on this page
+    // and show the success state. Don't use fetch (Buttondown may need a redirect).
+    const iframe = ensureButtondownFrame();
+    form.target = "buttondown-frame";
+    // Don't send the honeypot or consent checkbox to Buttondown.
+    if (honeypot) honeypot.disabled = true;
+    if (consent) consent.disabled = true;
 
-    // Provider hook is intentionally unused until a service is chosen and tested.
+    const done = () => showLocalSuccess();
+    iframe.addEventListener("load", done, { once: true });
+    window.setTimeout(done, 2000);
+    form.submit();
   });
 
   function clearFormErrors() {
@@ -113,6 +142,8 @@ document.querySelectorAll("[data-newsletter-form]").forEach((form) => {
   }
 
   function showLocalSuccess() {
+    if (finished) return;
+    finished = true;
     form.querySelectorAll(".signup-fields, .form-note, [type='submit']").forEach((el) => {
       el.hidden = true;
     });

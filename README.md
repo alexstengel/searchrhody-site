@@ -20,7 +20,7 @@ See `templates/README.md`. Copy a template out of `templates/` (those files are 
 
 ## Newsletter signup
 
-The newsletter form is visible but not connected to a provider. Leave `NEWSLETTER_ENDPOINT` empty in `script.js` until a provider is chosen and tested. See `newsletter-providers.md` for the comparison and recommendation.
+Newsletter signup is handled by Buttondown (free plan, username `searchrhody`). Forms post to `https://buttondown.com/api/emails/embed-subscribe/searchrhody`. Subscribers must confirm by email and can unsubscribe from the link in every issue. A custom sending domain has not been set up yet and would need DNS changes plus approval. See `newsletter-providers.md` for the earlier comparison.
 
 The existing Cloudflare Worker and Resend inquiry setup is intentionally untouched. Contact messages must not be added to a marketing list.
 

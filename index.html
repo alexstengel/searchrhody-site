@@ -162,8 +162,8 @@
         <h2 id="roundup-title">A few good Rhode Island discoveries, delivered weekly.</h2>
         <p class="section-intro">Interesting places, independent shops, local products, and ideas for your next outing. The first issue is still being prepared, and weekly sending will start once that issue is ready. We don’t claim an existing subscriber list or archive.</p>
 
-            <!-- OPEN DECISION: newsletter provider / endpoint is not configured. This form does not submit data. -->
-            <form class="signup-form" id="signup-home" data-newsletter-form novalidate>
+            <form class="signup-form" id="signup-home" data-newsletter-form action="https://buttondown.com/api/emails/embed-subscribe/searchrhody" method="post">
+              <input type="hidden" name="embed" value="1" />
               <div class="signup-fields">
                 <div class="form-errors" role="alert" hidden></div>
                 <div class="field">
@@ -173,7 +173,7 @@
                 </div>
                 <div class="field">
                   <label for="signup-home-name">First name <span class="opt">(optional)</span></label>
-                  <input id="signup-home-name" name="first_name" type="text" autocomplete="given-name" maxlength="80" />
+                  <input id="signup-home-name" name="metadata__first_name" type="text" autocomplete="given-name" maxlength="80" />
                 </div>
                 <div class="hp" aria-hidden="true">
                   <label for="signup-home-website">Website</label>
@@ -185,11 +185,11 @@
                 </label>
                 <p class="field-error consent-error" hidden></p>
                 <button class="btn btn-solid" type="submit">Get the Rhody Roundup</button>
-                <p class="form-note">Signup isn’t connected to an email provider yet, so submitting this preview form will not store your email. We’ll turn this on after a provider is chosen and tested.</p>
+                <p class="form-note">After you subscribe, check your inbox and click the confirmation link. You can unsubscribe anytime from the link in our emails. We use Buttondown to send The Rhody Roundup.</p>
               </div>
               <div class="form-success" hidden tabindex="-1">
-                <h2>Thanks for trying the form.</h2>
-                <p>Newsletter signup isn’t connected yet, so your email was not submitted. Once a provider is chosen and tested, this form will subscribe you here.</p>
+                <h2>Thanks for signing up.</h2>
+                <p>Please check your inbox to confirm your subscription to The Rhody Roundup. You won’t receive the newsletter until you click the confirmation link.</p>
               </div>
             </form>
       </div>

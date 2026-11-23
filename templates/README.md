@@ -11,7 +11,7 @@ Do not treat the starter titles as published facts. They are editorial assignmen
 - `maker-spotlight.html` — a profile that requires an interview and the maker’s permission
 - `collection.html` — a group of related finds (not a store)
 
-Each template includes a visible **DEV PLACEHOLDER** banner, placeholder dates and author, a hero-image slot with credit/alt, practical details, a disclosure slot, related-story placeholders, and the unwired newsletter form. Do not add Article or BlogPosting structured data until the story is verified.
+Each template includes a visible **DEV PLACEHOLDER** banner, placeholder dates and author, a hero-image slot with credit/alt, practical details, a disclosure slot, related-story placeholders, and the Buttondown newsletter form. Do not add Article or BlogPosting structured data until the story is verified.
 
 ## How to add a new article
 

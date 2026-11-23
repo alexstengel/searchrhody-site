@@ -1,6 +1,6 @@
 # Newsletter provider comparison
 
-Researched on November 22, 2026, from each provider’s current official pricing or help pages. No accounts were created. Prices and limits change — confirm on the linked pages before signing up. The SearchRhody form is not connected to any of these yet.
+Researched on November 22, 2026, from each provider’s current official pricing or help pages. No accounts were created. Prices and limits change — confirm on the linked pages before signing up. SearchRhody now uses Buttondown. The comparison below was written before the account was created.
 
 Sources:
 
