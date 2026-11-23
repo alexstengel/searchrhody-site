@@ -3,3 +3,6 @@ brand/ref/*.png
 !brand/ref/brand-board.png
 brand/fonts/
 brand/__pycache__/
+
+# Full-resolution source downloads; optimized files live in assets/photos/
+assets/photos/src/

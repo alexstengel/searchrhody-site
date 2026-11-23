@@ -34,3 +34,7 @@ Navy `#142C3E`, coral `#F1784B`, ivory `#F7F5EF`, sea glass `#69A9A1`. The heade
 - Do not add checkout, affiliate links, or an unapproved family photo.
 - Do not change DNS, Cloudflare, or Resend from this branch.
 - Development placeholders must be replaced before launch.
+
+## Preview mode
+
+Unpublished story and newsletter layout mockups are hidden on the public pages. Add `?preview=1` to a page URL, or open `preview.html`, to review them. Mockups are labeled “Mockup — not published.” Photography credits are listed in `assets/photo-credits.md`.

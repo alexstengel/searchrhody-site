@@ -24,7 +24,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,600&amp;family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script>
+    (function () {
+      try {
+        if (new URLSearchParams(window.location.search).get("preview") === "1") {
+          document.documentElement.classList.add("is-preview");
+        }
+      } catch (e) {}
+    })();
+  </script>
 </head>
+
 <body>
 
   <a class="skip" href="#main">Skip to content</a>
@@ -66,14 +76,17 @@
             <h2>Editorial independence</h2>
             <p>SearchRhody is an independent publication. We are not a newsroom with a reporting desk, and we will not invent reviews, ratings, or sponsorships. If a story is sponsored or includes an approved affiliate relationship, we will say so clearly on the page. See our <a href="disclosures.html">disclosures</a> for the current policy.</p>
           </div>
-          <div class="photo-ph">
-            Photo placeholder — an approved founder photo can be added here. Family or child photos will not be used without explicit permission.
-          </div>
+          <figure class="founder-frame">
+            <div class="founder-frame-art">
+              <img src="assets/photos/founder-frame.svg" width="800" height="1000" alt="" />
+            </div>
+            <figcaption>A reserved space for an approved family photo. This is an illustrated placeholder, not a photograph of anyone, and we won’t add a portrait until one is approved.</figcaption>
+          </figure>
         </div>
         <section class="signup-block" style="border-radius:18px;margin-top:48px;padding:40px 28px" aria-labelledby="about-roundup">
           <p class="section-kicker">The Rhody Roundup</p>
           <h2 id="about-roundup">Get the newsletter</h2>
-          <p class="section-intro">A few good Rhode Island discoveries, delivered weekly. The first issue is still being prepared.</p>
+          <p class="section-intro">A short weekly note with a place to explore, something made in Rhode Island, and a weekend idea. The first issue is still being prepared.</p>
 
             <form class="signup-form" id="signup-about" data-newsletter-form action="https://buttondown.com/api/emails/embed-subscribe/searchrhody" method="post">
               <input type="hidden" name="embed" value="1" />
@@ -83,10 +96,6 @@
                   <label for="signup-about-email">Email <span class="req">(required)</span></label>
                   <input id="signup-about-email" name="email" type="email" autocomplete="email" inputmode="email" spellcheck="false" required maxlength="160" />
                   <p class="field-error email-error" hidden></p>
-                </div>
-                <div class="field">
-                  <label for="signup-about-name">First name <span class="opt">(optional)</span></label>
-                  <input id="signup-about-name" name="metadata__first_name" type="text" autocomplete="given-name" maxlength="80" />
                 </div>
                 <div class="hp" aria-hidden="true">
                   <label for="signup-about-website">Website</label>
@@ -98,7 +107,7 @@
                 </label>
                 <p class="field-error consent-error" hidden></p>
                 <button class="btn btn-solid" type="submit">Get the Rhody Roundup</button>
-                <p class="form-note">After you subscribe, check your inbox and click the confirmation link. You can unsubscribe anytime from the link in our emails. We use Buttondown to send The Rhody Roundup.</p>
+                <p class="form-note">After you subscribe, check your inbox and click the confirmation link. You can unsubscribe anytime from the link in our emails. We use Buttondown to send The Rhody Roundup. We only need your email to add you to the list.</p>
               </div>
               <div class="form-success" hidden tabindex="-1">
                 <h2>Thanks for signing up.</h2>
@@ -119,6 +128,7 @@
           <span class="brand-wordmark">Search<span>Rhody</span></span>
         </a>
         <p class="fine">&copy; <span id="year">2026</span> SearchRhody · An independent guide to Rhode Island.</p>
+        <p class="fine">The founder frame is an original illustration, not a photograph. Site photographs are listed in <a href="assets/photo-credits.md">photo credits</a>.</p>
       </div>
       <p class="footer-links">
         <a href="about.html">About</a>

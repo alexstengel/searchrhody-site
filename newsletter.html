@@ -24,8 +24,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,600&amp;family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script>
+    (function () {
+      try {
+        if (new URLSearchParams(window.location.search).get("preview") === "1") {
+          document.documentElement.classList.add("is-preview");
+        }
+      } catch (e) {}
+    })();
+  </script>
 </head>
+
 <body>
+
+  <div class="preview-banner" data-mockup role="status">
+    <div class="wrap">Preview mode. The sample issue below is a layout mockup, not a published edition. <a href="newsletter.html">View the public newsletter page</a></div>
+  </div>
 
   <a class="skip" href="#main">Skip to content</a>
   <header class="nav" id="top">
@@ -50,24 +64,77 @@
       <div class="wrap">
         <p class="section-kicker">Newsletter</p>
         <h1>The Rhody Roundup</h1>
-        <p class="lede">A few good Rhode Island discoveries, delivered weekly. Interesting places, independent shops, local products, and ideas for your next outing.</p>
+        <p class="lede">A short weekly note for people who want to see more of Rhode Island — not another inbox full of filler.</p>
       </div>
     </header>
     <div class="prose-page">
       <div class="wrap">
 
         <div class="prose">
-          <h2>What you’ll get</h2>
-          <p>The Rhody Roundup is SearchRhody’s email newsletter. Each issue is meant to be a short, useful note: a few finds worth your time, not an inbox full of filler.</p>
-          <p>We’re preparing the first issues now. When we start sending, the plan is a weekly note. We’ll confirm that cadence when the first issue is ready. This page does not have an existing archive, and we don’t claim a subscriber count.</p>
-          <h2>A sample issue</h2>
+          <h2>What’s inside each issue</h2>
+          <p>The Rhody Roundup is SearchRhody’s email newsletter. When we start sending, the plan is a weekly letter you can read in a few minutes and use the same week. We’ll confirm that cadence when the first issue is ready. We don’t claim a subscriber count, and there isn’t a public archive yet.</p>
         </div>
-        <div class="coming-soon" style="margin:16px 0 32px">
-          <p><strong>Sample issue coming soon.</strong> When the first Roundup is ready, an example will be published here. We will not invent a back issue to preview the design.</p>
+
+        <div class="issue-points">
+          <div class="issue-point">
+            <h3>A place to explore</h3>
+            <p>A shoreline, a walk, or a town worth a Saturday — shared after we’ve been there ourselves.</p>
+          </div>
+          <div class="issue-point">
+            <h3>Something made in Rhode Island</h3>
+            <p>A maker or independent shop we’re getting to know, never named until we have permission.</p>
+          </div>
+          <div class="issue-point">
+            <h3>A weekend idea</h3>
+            <p>One simple plan for time together, without a packed itinerary or a hard sell.</p>
+          </div>
         </div>
+
+        <div class="issue-mock" data-mockup>
+          <div class="issue-mock-head">
+            <span class="mock-badge">Mockup — not published</span>
+            <p class="kicker">The Rhody Roundup</p>
+            <h3>A sample issue layout</h3>
+            <p class="dek">This is a design preview of how a weekly note may look. It is not a real edition, and it does not name businesses, events, or reviews.</p>
+          </div>
+          <div class="issue-mock-body">
+            <div class="issue-row">
+              <picture>
+                <source type="image/webp" srcset="assets/photos/beavertail-shore.webp" />
+                <img src="assets/photos/beavertail-shore.jpg" width="1200" height="1841" alt="" loading="lazy" />
+              </picture>
+              <div>
+                <h4>A place to explore</h4>
+                <p>A short note about a place we’ve visited, with enough detail to help you decide if you’d like to go.</p>
+              </div>
+            </div>
+            <div class="issue-row">
+              <picture>
+                <source type="image/webp" srcset="assets/photos/providence-river.webp" />
+                <img src="assets/photos/providence-river.jpg" width="1200" height="1386" alt="" loading="lazy" />
+              </picture>
+              <div>
+                <h4>Something made here</h4>
+                <p>A maker or shop introduced only after a visit and a yes from the people involved.</p>
+              </div>
+            </div>
+            <div class="issue-row">
+              <picture>
+                <source type="image/webp" srcset="assets/photos/beavertail-light.webp" />
+                <img src="assets/photos/beavertail-light.jpg" width="1400" height="1221" alt="" loading="lazy" />
+              </picture>
+              <div>
+                <h4>A weekend idea</h4>
+                <p>One straightforward suggestion for time in Rhode Island, without inventing an itinerary.</p>
+              </div>
+            </div>
+          </div>
+          <p class="issue-mock-note">Photos in this mockup are licensed Rhode Island landmarks used to show layout only. They are not tied to unpublished stories. See <a href="assets/photo-credits.md">photo credits</a>.</p>
+        </div>
+
         <div class="prose">
           <h2>Subscribe</h2>
-          <p>Use the form below to subscribe. You’ll get a confirmation email from Buttondown; click the link in that email to confirm, and every note will include a way to unsubscribe. We won’t add people who write to us through the contact page to this list.</p>
+          <p>Leave your email below if you’d like the letter when it starts. You’ll get a confirmation email from Buttondown; click the link in that email to confirm, and every note will include a way to unsubscribe. We won’t add people who write to us through the contact page to this list.</p>
         </div>
 
             <form class="signup-form" id="signup-newsletter" data-newsletter-form action="https://buttondown.com/api/emails/embed-subscribe/searchrhody" method="post">
@@ -79,10 +146,6 @@
                   <input id="signup-newsletter-email" name="email" type="email" autocomplete="email" inputmode="email" spellcheck="false" required maxlength="160" />
                   <p class="field-error email-error" hidden></p>
                 </div>
-                <div class="field">
-                  <label for="signup-newsletter-name">First name <span class="opt">(optional)</span></label>
-                  <input id="signup-newsletter-name" name="metadata__first_name" type="text" autocomplete="given-name" maxlength="80" />
-                </div>
                 <div class="hp" aria-hidden="true">
                   <label for="signup-newsletter-website">Website</label>
                   <input id="signup-newsletter-website" name="website" type="text" tabindex="-1" autocomplete="off" />
@@ -93,7 +156,7 @@
                 </label>
                 <p class="field-error consent-error" hidden></p>
                 <button class="btn btn-solid" type="submit">Get the Rhody Roundup</button>
-                <p class="form-note">After you subscribe, check your inbox and click the confirmation link. You can unsubscribe anytime from the link in our emails. We use Buttondown to send The Rhody Roundup.</p>
+                <p class="form-note">After you subscribe, check your inbox and click the confirmation link. You can unsubscribe anytime from the link in our emails. We use Buttondown to send The Rhody Roundup. We only need your email to add you to the list.</p>
               </div>
               <div class="form-success" hidden tabindex="-1">
                 <h2>Thanks for signing up.</h2>
@@ -113,6 +176,7 @@
           <span class="brand-wordmark">Search<span>Rhody</span></span>
         </a>
         <p class="fine">&copy; <span id="year">2026</span> SearchRhody · An independent guide to Rhode Island.</p>
+        <p class="fine">Photographs are credited on this page and in <a href="assets/photo-credits.md">photo credits</a>.</p>
       </div>
       <p class="footer-links">
         <a href="about.html">About</a>

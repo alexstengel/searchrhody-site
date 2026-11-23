@@ -24,6 +24,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,600&amp;family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script>
+    (function () {
+      try {
+        if (new URLSearchParams(window.location.search).get("preview") === "1") {
+          document.documentElement.classList.add("is-preview");
+        }
+      } catch (e) {}
+    })();
+  </script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -49,6 +58,10 @@
 </head>
 <body>
 
+  <div class="preview-banner" data-mockup role="status">
+    <div class="wrap">Preview mode. Items labeled “Mockup — not published” are design samples, not live stories or issues. <a href="index.html">View the public homepage</a></div>
+  </div>
+
   <a class="skip" href="#main">Skip to content</a>
   <header class="nav" id="top">
     <div class="wrap nav-inner">
@@ -68,74 +81,126 @@
     </div>
   </header>
   <main id="main">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="wrap">
-        <p class="eyebrow"><span class="dot" aria-hidden="true"></span> A local guide to the Ocean State.</p>
-        <h1 id="hero-title">There’s more to Rhode Island. <em>Let’s find it.</em></h1>
-        <p class="hero-sub">Great places, local makers, weekend ideas, and the stories that make Rhode Island worth exploring.</p>
-        <div class="hero-actions">
-          <a class="btn btn-solid" href="newsletter.html">Get the Rhody Roundup</a>
-          <a class="btn btn-ghost" href="discover.html">Explore the latest finds.</a>
+    <section class="hero hero-photo" aria-labelledby="hero-title">
+      <div class="hero-media">
+        <picture>
+          <source type="image/webp" srcset="assets/photos/beavertail-coast.webp" />
+          <img src="assets/photos/beavertail-coast.jpg" width="2000" height="958" alt="Waves breaking on the rocky shore at Beavertail State Park in Jamestown, Rhode Island, looking out across the water." fetchpriority="high" />
+        </picture>
+      </div>
+      <div class="hero-overlay">
+        <div class="wrap">
+          <p class="eyebrow"><span class="dot" aria-hidden="true"></span> A local guide to the Ocean State.</p>
+          <h1 id="hero-title">There’s more to Rhode Island. <em>Let’s find it.</em></h1>
+          <p class="hero-sub">Great places, local makers, weekend ideas, and the stories that make Rhode Island worth exploring.</p>
+          <div class="hero-actions">
+            <a class="btn btn-solid" href="newsletter.html">Get the Rhody Roundup</a>
+            <a class="btn btn-ghost" href="#browse">Start exploring</a>
+          </div>
         </div>
       </div>
     </section>
+    <p class="hero-credit"><span class="wrap">Beavertail State Park, Jamestown. Photo: <a href="https://commons.wikimedia.org/wiki/File:View_from_the_top_of_the_Light_House_-_Beavertail_State_Park_-_Jamestown_RI_-_panoramio_(2).jpg">Leonardo DaSilva</a>, <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. Cropped and resized for the web.</span></p>
 
-    <section class="section" aria-labelledby="featured-title">
+    <section class="section" id="browse" aria-labelledby="cats-title">
+      <div class="wrap">
+        <p class="section-kicker">Start here</p>
+        <h2 id="cats-title">Explore, shop, and discover</h2>
+        <p class="section-intro">Three ways to browse SearchRhody. Family Rhody and Meet Rhody will appear as story tags once we have approved pieces in those areas.</p>
+        <div class="interest-grid">
+          <a class="interest-card" href="explore.html">
+            <div class="interest-media">
+              <picture>
+                <source type="image/webp" srcset="assets/photos/beavertail-shore.webp" />
+                <img src="assets/photos/beavertail-shore.jpg" width="1200" height="1841" alt="Surf washing over the rocky shore at Beavertail State Park in Jamestown, with a gull’s wing in the foreground." loading="lazy" />
+              </picture>
+            </div>
+            <div class="body">
+              <h3>Explore Rhody</h3>
+              <p>Walks, shorelines, and weekend ideas around the state — shared after we’ve been there ourselves.</p>
+              <span class="more">Browse Explore Rhody</span>
+            </div>
+          </a>
+          <a class="interest-card" href="shop.html">
+            <div class="interest-media">
+              <picture>
+                <source type="image/webp" srcset="assets/photos/providence-river.webp" />
+                <img src="assets/photos/providence-river.jpg" width="1200" height="1386" alt="The downtown Providence skyline across the river, seen from the wooden deck of the Michael S. Van Leesten Memorial Bridge." loading="lazy" />
+              </picture>
+            </div>
+            <div class="body">
+              <h3>Shop Rhody</h3>
+              <p>Independent shops and Rhode Island-made finds, written up once we’ve visited and the makers have said yes.</p>
+              <span class="more">Browse Shop Rhody</span>
+            </div>
+          </a>
+          <a class="interest-card" href="discover.html">
+            <div class="interest-media">
+              <picture>
+                <source type="image/webp" srcset="assets/photos/beavertail-light.webp" />
+                <img src="assets/photos/beavertail-light.jpg" width="1400" height="1221" alt="Beavertail Light, a stone lighthouse and keeper’s house above the coastal grass in Jamestown, Rhode Island." loading="lazy" />
+              </picture>
+            </div>
+            <div class="body">
+              <h3>Discover</h3>
+              <p>Stories about places, makers, and experiences worth sharing. New pieces will appear here as they’re published.</p>
+              <span class="more">Browse Discover</span>
+            </div>
+          </a>
+        </div>
+        <ul class="credit-list">
+          <li>Explore: Beavertail State Park, Jamestown. Photo: <a href="https://commons.wikimedia.org/wiki/File:Beavertail_State_Park_-_Jamestown_RI_-_panoramio_(37).jpg">Leonardo DaSilva</a>, <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. Cropped and resized for the web.</li>
+          <li>Shop: Providence riverfront from the Van Leesten Bridge. Photo: <a href="https://commons.wikimedia.org/wiki/File:Providence_River_Pedestrian_and_Bicycle_Bridge.jpg">Filetime</a>, <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a>. Cropped and resized for the web.</li>
+          <li>Discover: Beavertail Light, Jamestown. Photo: <a href="https://commons.wikimedia.org/wiki/File:Beavertail_Light,_Jamestown,_Rhode_Island.jpg">Lara</a>, <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>. Cropped and resized for the web.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section stories-section" aria-labelledby="featured-title" style="padding-top:0">
       <div class="wrap">
         <p class="section-kicker">Discover</p>
         <h2 id="featured-title">Featured stories</h2>
-        <p class="section-intro">First stories are still being reported. The cards below are development placeholders only and must be replaced with approved stories before launch. They are not published articles.</p>
+        <p class="section-intro">These cards show the story layout only. They are not published articles, and the titles are assignments — not reviews, interviews, or guides that exist yet.</p>
         <div class="card-grid">
-          <article class="story-card">
-            <div class="story-media" aria-hidden="true"><span>Image to come</span></div>
+          <article class="story-card" data-mockup>
+            <div class="story-media">
+              <picture>
+                <source type="image/webp" srcset="assets/photos/beavertail-light.webp" />
+                <img src="assets/photos/beavertail-light.jpg" width="1400" height="1221" alt="" loading="lazy" />
+              </picture>
+            </div>
             <div class="body">
-              <span class="dev-badge">DEV PLACEHOLDER</span>
-              <h3>A Rhode Island-made gift guide under $50</h3>
-              <p>Editorial assignment only. Not a published guide, and no products have been selected or reviewed yet.</p>
+              <span class="mock-badge">Mockup — not published</span>
+              <h3>A Rhode Island-made gift guide</h3>
+              <p>Layout sample only. No products have been selected or reviewed, and this is not a published guide.</p>
             </div>
           </article>
-          <article class="story-card">
-            <div class="story-media" aria-hidden="true"><span>Image to come</span></div>
+          <article class="story-card" data-mockup>
+            <div class="story-media">
+              <picture>
+                <source type="image/webp" srcset="assets/photos/beavertail-shore.webp" />
+                <img src="assets/photos/beavertail-shore.jpg" width="1200" height="1841" alt="" loading="lazy" />
+              </picture>
+            </div>
             <div class="body">
-              <span class="dev-badge">DEV PLACEHOLDER</span>
-              <h3>A Saturday exploring [verified town]</h3>
-              <p>Editorial assignment only. The town will be named after it has been visited and verified. No itinerary is published yet.</p>
+              <span class="mock-badge">Mockup — not published</span>
+              <h3>A Saturday exploring a coastal town</h3>
+              <p>Layout sample only. A town will be named after it has been visited and verified. No itinerary is published yet.</p>
             </div>
           </article>
-          <article class="story-card">
-            <div class="story-media" aria-hidden="true"><span>Image to come</span></div>
+          <article class="story-card" data-mockup>
+            <div class="story-media">
+              <picture>
+                <source type="image/webp" srcset="assets/photos/providence-river.webp" />
+                <img src="assets/photos/providence-river.jpg" width="1200" height="1386" alt="" loading="lazy" />
+              </picture>
+            </div>
             <div class="body">
-              <span class="dev-badge">DEV PLACEHOLDER</span>
-              <h3>Meet a local maker: [interview and permission required]</h3>
-              <p>Editorial assignment only. This spotlight will be published after an interview and the maker’s permission.</p>
+              <span class="mock-badge">Mockup — not published</span>
+              <h3>Meet a local maker</h3>
+              <p>Layout sample only. A spotlight will be published after an interview and the maker’s permission.</p>
             </div>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" style="padding-top:0" aria-labelledby="cats-title">
-      <div class="wrap">
-        <h2 id="cats-title">Browse by interest</h2>
-        <p class="section-intro">Start with a section of the site. Family Rhody and Meet Rhody will appear as story tags once we have approved pieces in those areas.</p>
-        <div class="cat-list">
-          <a class="cat-pill" href="discover.html">Discover</a>
-          <a class="cat-pill" href="explore.html">Explore Rhody</a>
-          <a class="cat-pill" href="shop.html">Shop Rhody</a>
-          <span class="cat-pill is-quiet">Family Rhody — coming later</span>
-          <span class="cat-pill is-quiet">Meet Rhody — coming later</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" style="padding-top:0" aria-labelledby="made-title">
-      <div class="wrap">
-        <p class="section-kicker">Shop Rhody</p>
-        <h2 id="made-title">Made in Rhode Island</h2>
-        <p class="section-intro">A collection of Rhode Island-made finds will live here once stories and makers are approved. No products, prices, or partner links are listed yet.</p>
-        <div class="coming-soon">
-          <p><strong>First collection coming soon.</strong> This is not a store, and there is no checkout on SearchRhody.</p>
-          <p style="margin-top:10px"><a href="shop.html">Visit Shop Rhody</a> for the placeholder page, or <a href="newsletter.html">get The Rhody Roundup</a> when signup is connected.</p>
         </div>
       </div>
     </section>
@@ -150,9 +215,12 @@
           </blockquote>
           <p class="note">Draft copy, pending founder confirmation before launch. <a href="about.html">Read more about SearchRhody</a>.</p>
         </div>
-        <div class="photo-ph">
-          Photo placeholder — an approved founder photo can be added here. Family or child photos will not be used without explicit permission.
-        </div>
+        <figure class="founder-frame">
+          <div class="founder-frame-art">
+            <img src="assets/photos/founder-frame.svg" width="800" height="1000" alt="" />
+          </div>
+          <figcaption>A reserved space for an approved family photo. We won’t add a portrait here until one is approved.</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -160,7 +228,21 @@
       <div class="wrap">
         <p class="section-kicker">The Rhody Roundup</p>
         <h2 id="roundup-title">A few good Rhode Island discoveries, delivered weekly.</h2>
-        <p class="section-intro">Interesting places, independent shops, local products, and ideas for your next outing. The first issue is still being prepared, and weekly sending will start once that issue is ready. We don’t claim an existing subscriber list or archive.</p>
+        <p class="section-intro">Each issue is meant to be a short, useful note you can actually use this week: a place to go, something made here, and an idea for a Saturday. The first issue is still being prepared, and weekly sending will start once that issue is ready.</p>
+        <div class="issue-points" style="margin-bottom:28px">
+          <div class="issue-point">
+            <h3>A place to explore</h3>
+            <p>Somewhere worth the drive or a walk in your own backyard — shared after we’ve been there.</p>
+          </div>
+          <div class="issue-point">
+            <h3>Something made in Rhode Island</h3>
+            <p>A maker or shop we’re getting to know, never listed until we have the go-ahead.</p>
+          </div>
+          <div class="issue-point">
+            <h3>A weekend idea</h3>
+            <p>A simple plan for time together, without a packed itinerary or a hard sell.</p>
+          </div>
+        </div>
 
             <form class="signup-form" id="signup-home" data-newsletter-form action="https://buttondown.com/api/emails/embed-subscribe/searchrhody" method="post">
               <input type="hidden" name="embed" value="1" />
@@ -170,10 +252,6 @@
                   <label for="signup-home-email">Email <span class="req">(required)</span></label>
                   <input id="signup-home-email" name="email" type="email" autocomplete="email" inputmode="email" spellcheck="false" required maxlength="160" />
                   <p class="field-error email-error" hidden></p>
-                </div>
-                <div class="field">
-                  <label for="signup-home-name">First name <span class="opt">(optional)</span></label>
-                  <input id="signup-home-name" name="metadata__first_name" type="text" autocomplete="given-name" maxlength="80" />
                 </div>
                 <div class="hp" aria-hidden="true">
                   <label for="signup-home-website">Website</label>
@@ -185,7 +263,7 @@
                 </label>
                 <p class="field-error consent-error" hidden></p>
                 <button class="btn btn-solid" type="submit">Get the Rhody Roundup</button>
-                <p class="form-note">After you subscribe, check your inbox and click the confirmation link. You can unsubscribe anytime from the link in our emails. We use Buttondown to send The Rhody Roundup.</p>
+                <p class="form-note">After you subscribe, check your inbox and click the confirmation link. You can unsubscribe anytime from the link in our emails. We use Buttondown to send The Rhody Roundup. We only need your email to add you to the list.</p>
               </div>
               <div class="form-success" hidden tabindex="-1">
                 <h2>Thanks for signing up.</h2>
@@ -204,6 +282,7 @@
           <span class="brand-wordmark">Search<span>Rhody</span></span>
         </a>
         <p class="fine">&copy; <span id="year">2026</span> SearchRhody · An independent guide to Rhode Island.</p>
+        <p class="fine">Photographs are credited on this page and in <a href="assets/photo-credits.md">photo credits</a>.</p>
       </div>
       <p class="footer-links">
         <a href="about.html">About</a>

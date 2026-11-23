@@ -1,3 +1,10 @@
+// Preview mode (?preview=1 or preview.html) reveals mockups hidden on the public site.
+try {
+  if (new URLSearchParams(window.location.search).get("preview") === "1") {
+    document.documentElement.classList.add("is-preview");
+  }
+} catch (e) {}
+
 // SearchRhody 2.0 — navigation, footer year, newsletter form, legacy inquiry notes.
 // Newsletter signups post to Buttondown as a normal form (not fetch), so confirmation
 // and any CAPTCHA can complete. See https://docs.buttondown.com/building-your-subscriber-base
